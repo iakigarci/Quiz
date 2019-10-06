@@ -2,6 +2,9 @@
 <html>
 <head>
   <?php include '../html/Head.html'?>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
+  </script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
@@ -50,13 +53,15 @@
           <label for="imagen">Selecciona una imagen</label>
           <input type="file" name="imagen" id="imagen">
         </div>
+        <div>
+          <input type="button" value="Submit" id="submit_b">
+        </div>
 
         <!-- FALTA QUE APAREZCA LA IMAGEN -->
- 
       </form>
-
     </div>
   </section>
   <?php include '../html/Footer.html' ?>
+  <script src="../js/ValidateFieldsQuestion.js"></script>
 </body>
 </html>
