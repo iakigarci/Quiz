@@ -10,6 +10,8 @@
 
       Añadir el formulario y los scripts necesarios para que el usuario <br>
       pueda introducir los datos de una pregunta sin imagen.
+        
+        
 
     </div>
   </section>
