@@ -5,7 +5,8 @@
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
   </script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+  crossorigin="anonymous"> -->
 </head>
 <body>
   <?php include '../php/Menus.php' ?>
@@ -13,29 +14,29 @@
     <div>
 
       <form action="" method="get">
-        <div class="form-group">
+        <div >
           <label for="dirCorreo">Correo electrónico</label>
-            <input type="text" class="form-control" id="dirCorreo" >
+            <input type="text" id="dirCorreo" >
         </div>
-        <div class="form-group">
+        <div >
           <label for="enunciadoPre">Enunciado de la pregunta</label>
-            <input type="text" class="form-control" id="enunciadoPre" >
+            <input type="text" id="enunciadoPre" >
         </div>
-        <div class="form-group">
+        <div >
           <label for="resCorrecta">Respuesta correcta</label>
-            <input type="text" class="form-control" id="resCorrecta" >
+            <input type="text" id="resCorrecta" >
         </div>
-        <div class="form-group">
+        <div >
           <label for="resInc1">Respuesta incorrecta 1</label>
-            <input type="text" class="form-control" id="resInc1" >
+            <input type="text" id="resInc1" >
         </div>
-        <div class="form-group">
+        <div >
           <label for="resInc2">Respuesta incorrecta 2</label>
-            <input type="text" class="form-control" id="resInc2" >
+            <input type="text" id="resInc2" >
         </div>
-        <div class="form-group">
+        <div >
           <label for="resInc3">Respuesta incorrecta 3</label>
-            <input type="text" class="form-control" id="resInc3" >
+            <input type="text" id="resInc3" >
         </div>
         <div>
           <label for="dificultad">Selecciona dificultad</label>
@@ -47,7 +48,7 @@
         </div>
         <div>
         <label for="tema">Tema</label>
-            <input type="text" class="form-control" id="tema" >
+            <input type="text" id="tema" >
         </div>
         <div>
           <label for="imagen">Selecciona una imagen</label>
