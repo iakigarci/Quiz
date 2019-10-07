@@ -52,16 +52,16 @@
         <div>
           <label for="imagen">Selecciona una imagen</label>
           <input type="file" name="imagen" id="imagen">
+          <img id="previewImagen" src="#" width="100" height="100"/>
         </div>
         <div>
           <input type="button" value="Submit" id="submit_b">
         </div>
-
-        <!-- FALTA QUE APAREZCA LA IMAGEN -->
       </form>
     </div>
   </section>
   <?php include '../html/Footer.html' ?>
   <script src="../js/ValidateFieldsQuestion.js"></script>
+  <script src="../js/ShowImageInForm.js"></script>
 </body>
 </html>
