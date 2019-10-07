@@ -12,31 +12,30 @@
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
     <div>
-
       <form action="" method="get">
         <div >
           <label for="dirCorreo">Correo electrónico</label>
-            <input type="text" id="dirCorreo" >
+            <input type="text" id="dirCorreo" ><br><br>
         </div>
         <div >
           <label for="enunciadoPre">Enunciado de la pregunta</label>
-            <input type="text" id="enunciadoPre" >
+            <input type="text" id="enunciadoPre" ><br><br>
         </div>
         <div >
           <label for="resCorrecta">Respuesta correcta</label>
-            <input type="text" id="resCorrecta" >
+            <input type="text" id="resCorrecta" ><br><br>
         </div>
         <div >
           <label for="resInc1">Respuesta incorrecta 1</label>
-            <input type="text" id="resInc1" >
+            <input type="text" id="resInc1" ><br><br>
         </div>
         <div >
           <label for="resInc2">Respuesta incorrecta 2</label>
-            <input type="text" id="resInc2" >
+            <input type="text" id="resInc2" ><br><br>
         </div>
         <div >
           <label for="resInc3">Respuesta incorrecta 3</label>
-            <input type="text" id="resInc3" >
+            <input type="text" id="resInc3" ><br><br>
         </div>
         <div>
           <label for="dificultad">Selecciona dificultad</label>
@@ -45,22 +44,27 @@
             <option value="media">Media</option>
             <option value="dificl">Dificil</option>
           </select>
+          <br><br>
         </div>
         <div>
         <label for="tema">Tema</label>
-            <input type="text" id="tema" >
+            <input type="text" id="tema" ><br><br>
         </div>
         <div>
           <label for="imagen">Selecciona una imagen</label>
           <input type="file" name="imagen" id="imagen">
+        </div>
+        <div>
           <img id="previewImagen" src="#" width="100" height="100"/>
         </div>
+        <br><br>
         <div>
           <input type="button" value="Submit" id="submit_b">
         </div>
       </form>
     </div>
   </section>
+  
   <?php include '../html/Footer.html' ?>
   <script src="../js/ValidateFieldsQuestion.js"></script>
   <script src="../js/ShowImageInForm.js"></script>
