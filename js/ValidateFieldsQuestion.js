@@ -25,11 +25,15 @@ $(document).ready(function() {
 })
 
 function comprobarMail(mail) {
-    var regex = /^[a-zA-Z.!#$%&'*+/=?^_`{|}~-]+(?:[0-9]{3})+@ikasle.ehu.+(eus|es)\W*/;
+    var regex = /^[a-zA-Z]+(?:[0-9]{3})+@ikasle.ehu.+(eus|es)\W*/;
     if (regex.test(mail)){//Alumnos
         return true;
-    } else {
-        return false;
     }
+    var regexPro1 = /^[a-zA-Z]+.+[a-zA-Z]+@ehu.+(eus|es)\W*/;
+    var regexPro2 = /^[a-zA-Z]+@ehu.+(eus|es)\W*/;
+    if (regexPro1.test(mail) || regexPro2.test(mail)) {
+        return true;
+    }
+    return false;  
 }
 
