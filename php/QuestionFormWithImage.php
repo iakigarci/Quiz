@@ -2,6 +2,7 @@
 <html>
 <head>
   <?php include '../html/Head.html'?>
+    <script src="../js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
   <?php include '../php/Menus.php' ?>
@@ -31,21 +32,35 @@
             </select>
             <p>Introduce el tema de la pregunta: *</p>
             <input type="text" size="60" id="temaPregunta">
-            <input type="file" id="selectorImg" accept=".jpg, .png" onchange="if(!this.value.length)return false; verImagen();" >
-
+            <div id="selector">
+            <input type="file" id="file" accept="image/*">
+            </div>
+            <img id="verImagen" src="" width="100"/>
+            
+            <p> <input type="submit" value="Enviar"></p>
         </form>     
         
         
-        <script src="../js/jquery-3.4.1.min.js">
+        <script>
             
-            $('#selectorImg').change(function(){
-                console.log("GG")
-                var img = $('#selectorImg').val()
-                console.log(img)
+            $('#file').change(function(){
+                console.log("GG");
+                verImagen(this);
             })
             
-            function verImagen(){
-                console.log("GG")
+            
+            
+            function verImagen(input){
+                if(input.files && input.files[0]){
+                    var reader = new FileReader()
+                    
+                    reader.onload = function (e){
+                        $('#verImagen').attr('src',e.target.result);
+                        
+                    }
+                    
+                    reader.readAsDataURL(input.files[0])
+                }
             }
 
         </script>
