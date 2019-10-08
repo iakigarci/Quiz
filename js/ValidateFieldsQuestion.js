@@ -10,8 +10,12 @@ function validarFormulario(){
         }else{
             if(input.attr("id")=="dirCorreo"){
                 resul = validarCorreo(input.val());
+                if(!resul){
+                    alert("El correo electronico introducido no es correcto.");
+                }
             }else if(input.attr("id")=="nombrePregunta"){
                 if(input.val().length<10){
+                    alert("El enunciado de la pregunta es demasiado corto.");
                     resul = false;
                 }
             }
