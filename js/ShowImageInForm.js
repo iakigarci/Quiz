@@ -10,3 +10,10 @@ function verImagen(input){
         reader.readAsDataURL(input.files[0])
     }
 }
+
+
+$('document').ready(function(){
+    $('#file').change(function(){
+        verImagen(this);
+    })
+})

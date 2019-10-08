@@ -40,19 +40,7 @@
             <img id="verImagen" src="" width="100"/>
             
             <p> <input type="submit" id="submit" value="Enviar"> <input type="reset" value="Limpiar"></p>
-        </form>     
-        
-        
-        <script>
-            
-            $('#file').change(function(){
-                console.log("GG");
-                verImagen(this);
-            })
-            
-            
-
-        </script>
+        </form>
         
     </div>
   </section>
