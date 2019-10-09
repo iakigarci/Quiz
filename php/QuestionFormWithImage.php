@@ -10,9 +10,6 @@
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
     <div>
-
-      Añadir el formulario y los scripts necesarios para que el usuario <br>
-      pueda introducir los datos de una pregunta con una imagen relacionada con la misma.
         <form action="AddQuestion.php" name="fquestion" id="fquestion">
             <p>Introduce tu dirección de correo: *</p>
             <input type="text" size="60" id="dirCorreo" name="Direccion Correo Electronico">

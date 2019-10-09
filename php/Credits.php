@@ -13,7 +13,13 @@
         <p>Correo contacto: <a href="mailto:galvarez024@ikasle.ehu.eus" >galvarez024@ikasle.ehu.eus</a></p>
         <br>
         <img src="../images/myAvatar.png" width="125" height="125">
-        <p>Estudiante de Ingenieria Informatica en la especialización <br> de Ingenieria del Software.</p>
+        <p>Estudiante de Ingeniería Informática en la especialización <br> de Ingeniería del Software.</p>
+        <br><hr>
+        <p>Iñaki Garcia Noya</p>
+        <p>Correo contacto: <a href="mailto:igarcia361@ikasle.ehu.eus" >igarcia361@ikasle.ehu.eus</a></p>
+        <br>
+        <img src="../images/avatarIaki.png.jpg" width="125" height="125">
+        <p>Estudiante de Ingeniería Informática en la especialización <br> de Ingeniería del Software.</p>
 
     </div>
   </section>
