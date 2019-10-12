@@ -12,9 +12,9 @@
 
     <form action="AddQuestion.php" name="fquestion" id="fquestion">
             <p>Introduce tu dirección de correo: *</p>
-            <input type="email" size="60" id="dirCorreo" name="Direccion Correo Electronico" required>
+            <input type="email" size="60" id="dirCorreo" name="Direccion Correo Electronico" required pattern="((^[a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))$)|^[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es))$)">
             <p>Introduce el enunciado de la pregunta: *</p>
-            <input type="text" size="60" id="nombrePregunta" name="Enunciado Pregunta" required>
+            <input type="text" size="60" id="nombrePregunta" name="Enunciado Pregunta" required pattern="^.{10,}$">
             <p>Respuesta correcta: *</p>
             <input type="text" size="60" id="respuestaCorrecta" name="Respuesta Correcta" required>
             <p>Respuesta incorrecta1: *</p>
@@ -34,35 +34,10 @@
             <div id="selector">
             <input type="file" id="file" accept="image/*" name="Imagen" required>
             </div>
-            <img id="verImagen" src="" width="100"/>
-            
             <p> <input type="submit" id="submit" value="Enviar"> <input type="reset" value="Limpiar"></p>
         </form>
     </div>
   </section>
   <?php include '../html/Footer.html' ?>
-     <script>
-         
-         $('document').ready(function(){
-            $('#submit').click(function(){
-                return validarCorreo();
-            });
-        });
-        function validarCorreo(){
-            var correo = $('#dirCorreo').val();
-            console.log(correo);
-            var regexAlu = /^[a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))$/;
-            var regexPro = /^[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es))$/;
-
-            if(regexAlu.test(correo)){
-                return true;
-            }
-            else if(regexPro.test(correo)){
-                return true;
-            }
-            alert("El correo electronico no es valido");
-            return false;
-        }
-        </script>
 </body>
 </html>

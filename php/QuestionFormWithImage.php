@@ -34,7 +34,7 @@
             <div id="selector">
             <input type="file" id="file" accept="image/*" name="Imagen">
             </div>
-            <img id="verImagen" src="" width="100"/>
+
             
             <p> <input type="submit" id="submit" value="Enviar"> <input type="reset" value="Limpiar"></p>
         </form>
