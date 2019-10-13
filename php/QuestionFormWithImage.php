@@ -12,7 +12,7 @@
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
     <div>
-      <form action="" method="get">
+      <form id='fquestion' name='fquestion' action=’AddQuestion.php’>
         <div >
           <label for="dirCorreo">Correo electrónico</label>
             <input type="text" id="dirCorreo" ><br><br>
