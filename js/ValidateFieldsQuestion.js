@@ -7,9 +7,7 @@ $(document).ready(function() {
         alert("No puede quedar vacio el campo con id: " + input.attr("id"));
       } else if (input.attr("id") == "dirCorreo") {
         if (comprobarMail($(this).val())) {
-          alert("Correo correcto");
         } else {
-          alert("Correco incorrecto");
           bol = false;
         }
       } else if (input.attr("id") == "enunciadoPre") {
