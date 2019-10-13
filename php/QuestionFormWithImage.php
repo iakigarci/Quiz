@@ -12,7 +12,7 @@
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
     <div>
-      <form action="" method="get">
+      <form id='fquestion' name='fquestion' action=’AddQuestion.php’>
         <div >
           <label for="dirCorreo">Correo electrónico</label>
             <input type="text" id="dirCorreo" ><br><br>
@@ -40,9 +40,9 @@
         <div>
           <label for="dificultad">Selecciona dificultad</label>
           <select name="" id="dificultad"> 
-            <option value="baja">Baja</option>
-            <option value="media">Media</option>
-            <option value="dificl">Dificil</option>
+            <option id="baja" value="1">Baja</option>
+            <option id="media" value="2">Media</option>
+            <option id="alta" value="3">Dificil</option>
           </select>
           <br><br>
         </div>
@@ -64,7 +64,7 @@
       </form>
     </div>
   </section>
-  
+
   <?php include '../html/Footer.html' ?>
   <script src="../js/ValidateFieldsQuestion.js"></script>
   <script src="../js/ShowImageInForm.js"></script>
