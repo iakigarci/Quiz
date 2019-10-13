@@ -8,8 +8,9 @@
   <section class="main" id="s1">
     <div>
     <?php
-        
-        $link = mysqli_connect("localhost","root","","quiz");
+        include 'DbConfig.php';
+        //Creamos la conexion con la BD.
+        $link = mysqli_connect($server,$user,$pass,$basededatos);
         if(!$link){
             die("Fallo al conectar con la base de datos: " .mysqli_connect_error());
         }
