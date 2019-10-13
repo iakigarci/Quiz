@@ -15,7 +15,7 @@
             die("Fallo al conectar con la base de datos: " .mysqli_connect_error());
         }
         
-        $sql = "SELECT * FROM PREGUNTAS;";
+        $sql = "SELECT * FROM preguntas;";
         $resul = mysqli_query($link,$sql);
         
         echo "<table border = ><tr><th>Email</th><th>Enunciado</th><th>Respuesta Correcta</th><th>Respuesta Incorrecta 1</th> <th>Respuesta Incorrecta 2</th><th>Respuesta Incorrecta 3</th><th>Complejidad</th><th>Tema</th><th>Imagen</th></tr>";
