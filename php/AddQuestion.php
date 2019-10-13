@@ -31,10 +31,14 @@
             die("Error: " .mysqli_error($mysqli));
         }
         echo "Registro añadido";
-    
+        
         mysqli_close($mysqli);
     ?>
     </div>
+      <div>
+          <a href="ShowQuestions.php">Click en este enlace para ver todos los registros.</a>
+      
+      </div>
   </section>
   <?php include '../html/Footer.html' ?>
 </body>
