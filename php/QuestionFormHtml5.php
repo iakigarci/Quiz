@@ -10,7 +10,7 @@
   <section class="main" id="s1">
     <div>
 
-    <form action="AddQuestion.php" name="fquestion" id="fquestion" method="post" enctype=multipart/form-data>
+    <form action="AddQuestionWithImage.php" name="fquestion" id="fquestion" method="post" enctype="multipart/form-data">
             <p>Introduce tu dirección de correo: *</p>
             <input type="email" size="60" id="dirCorreo" name="dirCorreo" required pattern="((^[a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))$)|^[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es))$)">
             <p>Introduce el enunciado de la pregunta: *</p>
