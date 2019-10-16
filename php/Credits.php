@@ -12,7 +12,7 @@
         <p>Gorka Alvarez Marlasca</p>
         <p>Correo contacto: <a href="mailto:galvarez024@ikasle.ehu.eus" >galvarez024@ikasle.ehu.eus</a></p>
         <br>
-        <img src="../images/myAvatar.png" width="125" height="125">
+        <img src="../images/FotoGorka.jpg" width="110" height="125">
         <p>Estudiante de Ingeniería Informática en la especialización <br> de Ingeniería del Software.</p>
         <br><hr>
         <p>Iñaki Garcia Noya</p>
