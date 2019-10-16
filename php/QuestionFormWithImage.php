@@ -10,7 +10,7 @@
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
     <div>
-        <form action="AddQuestion.php" name="fquestion" id="fquestion">
+        <form action="AddQuestionWithImage.php" name="fquestion" id="fquestion" method="post" enctype="multipart/form-data">
             <p>Introduce tu dirección de correo: *</p>
             <input type="text" size="60" id="dirCorreo" name="Direccion Correo Electronico">
             <p>Introduce el enunciado de la pregunta: *</p>
@@ -34,7 +34,7 @@
             <div id="selector">
             <input type="file" id="file" accept="image/*" name="Imagen">
             </div>
-            <img id="verImagen" src="" width="100"/>
+
             
             <p> <input type="submit" id="submit" value="Enviar"> <input type="reset" value="Limpiar"></p>
         </form>
