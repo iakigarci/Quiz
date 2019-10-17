@@ -12,7 +12,7 @@
 
     <form action="AddQuestionWithImage.php" name="fquestion" id="fquestion" method="post" enctype="multipart/form-data">
             <p>Introduce tu dirección de correo: *</p>
-            <input type="email" size="60" id="dirCorreo" name="dirCorreo" required pattern="((^[a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))$)|^[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es))$)">
+            <input type="email" size="60" id="dirCorreo" name="dirCorreo" required >
             <p>Introduce el enunciado de la pregunta: *</p>
             <input type="text" size="60" id="nombrePregunta" name="nombrePregunta" required pattern="^.{10,}$">
             <p>Respuesta correcta: *</p>
@@ -37,6 +37,21 @@
             <p> <input type="submit" id="submit" value="Enviar"> <input type="reset" value="Limpiar"></p>
         </form>
     </div>
+      
+      <div>
+        <?php
+            if(isset($_REQUEST['dirCorreo'])){
+                 if(preg_match("/((^[a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))$)|^[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es))$)/",$_REQUEST['dirCorreo'])){
+                     header('location:AddQuestionWithImage.php');
+                 }
+                    
+            
+
+
+            }          
+          ?>
+      
+      </div>
   </section>
   <?php include '../html/Footer.html' ?>
 </body>
