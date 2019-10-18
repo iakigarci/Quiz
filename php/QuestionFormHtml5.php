@@ -14,7 +14,7 @@
             <p>Introduce tu dirección de correo: *</p>
             <input type="email" size="60" id="dirCorreo" name="dirCorreo" required >
             <p>Introduce el enunciado de la pregunta: *</p>
-            <input type="text" size="60" id="nombrePregunta" name="nombrePregunta" required pattern="^.{10,}$">
+            <input type="text" size="60" id="nombrePregunta" name="nombrePregunta" required>
             <p>Respuesta correcta: *</p>
             <input type="text" size="60" id="respuestaCorrecta" name="respuestaCorrecta" required>
             <p>Respuesta incorrecta1: *</p>
@@ -38,20 +38,6 @@
         </form>
     </div>
       
-      <div>
-        <?php
-            if(isset($_REQUEST['dirCorreo'])){
-                 if(preg_match("/((^[a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))$)|^[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es))$)/",$_REQUEST['dirCorreo'])){
-                     header('location:AddQuestionWithImage.php');
-                 }
-                    
-            
-
-
-            }          
-          ?>
-      
-      </div>
   </section>
   <?php include '../html/Footer.html' ?>
 </body>
