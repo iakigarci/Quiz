@@ -32,7 +32,7 @@
             <p>Introduce el tema de la pregunta: *</p>
             <input type="text" size="60" id="temaPregunta" name="temaPregunta" required>
             <div id="selector">
-            <input type="file" id="file" accept="image/*" name="Imagen" required>
+            <input type="file" id="file" accept="image/*" name="Imagen">
             </div>
             <p> <input type="submit" id="submit" value="Enviar"> <input type="reset" value="Limpiar"></p>
         </form>
