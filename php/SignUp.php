@@ -73,7 +73,7 @@
             $email = $_REQUEST['dirCorreo'];
             $nombreApellidos = $_REQUEST['nombreApellidos'];
             $pass = $_REQUEST['pass'];
-            if(!empty($_REQUEST['Imagen'])){
+            if(isset($_FILES['Imagen']['name'])){
                 $image = $_FILES['Imagen']['tmp_name'];
                 $contenido_imagen = base64_encode(file_get_contents($image));
                 $sql = "INSERT INTO usuarios VALUES ($tipo,'$email','$nombreApellidos','$pass','$contenido_imagen');";
