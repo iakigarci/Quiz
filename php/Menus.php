@@ -19,12 +19,14 @@
     <script src="../js/jquery-3.4.1.min.js"></script>
 <script>
     function inicioSesion(){
-            $('#insertq').show();
-            $('#showq').show();
-            $('#register').hide();
-            $('#login').hide();
-            $('#logout').show();
-        }
+        $('#insertq').show();
+        $('#showq').show();
+        $('#register').hide();
+        $('#login').hide();
+        $('#logout').show();
+        $("#h1").append("<p><?php echo $_GET["email"];?></p>");
+        $("#h1").append("<img width=\"50\" height=\"60\" src=\"data:image/*;base64,<?php echo getImagenDeBD();?>\" alt=\"Imagen\"/>");
+    }
     
     function cierreSesion(){
             $('#insertq').hide();
@@ -42,7 +44,30 @@
 
         echo "<script>cierreSesion();</script>";
     }
+    
+    function getImagenDeBD(){
+        if(isset($_GET['email'])){
+            include 'DbConfig.php';
+            $mysqli = mysqli_connect($server,$user,$pass,$basededatos);
+            if(!$mysqli){
+                die("Error: ".mysqli_connect_error);
+            }
+
+            $sql = "SELECT foto FROM usuarios WHERE email=\"".$_GET['email']."\";";
+            $resul = mysqli_query($mysqli,$sql, MYSQLI_USE_RESULT);
+            if(!$resul){
+                die("Error: ".mysqli_error($mysqli));
+            }
+            $img = mysqli_fetch_array($resul);
+            return $img['foto'];
+        }
+        else{
+            return "";
+        }
+    }
     ?>
+    
+    
     
     
     

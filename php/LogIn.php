@@ -41,9 +41,7 @@
                     die("Error: ".mysqli_error($mysqli));
                 }
                 $row = mysqli_fetch_array($resultado);
-                if($row['email']==$email){
-                    //inicioSesion();
-                    //phpinfo();
+                if($row['email']==$email){;
                     sleep(3);
                     header("location:Layout.php?email=".$_REQUEST['dirCorreo']);
                 }else{
