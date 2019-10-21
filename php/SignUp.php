@@ -73,13 +73,15 @@
             $email = $_REQUEST['dirCorreo'];
             $nombreApellidos = $_REQUEST['nombreApellidos'];
             $pass = $_REQUEST['pass'];
-            if(isset($_FILES['Imagen']['name'])){
-                $image = $_FILES['Imagen']['tmp_name'];
-                $contenido_imagen = base64_encode(file_get_contents($image));
-                $sql = "INSERT INTO usuarios VALUES ($tipo,'$email','$nombreApellidos','$pass','$contenido_imagen');";
+            if($_FILES['Imagen']['name'] == ""){               
+                $image = "../images/usuarioAnonimo.jpg";
             }else{
-                  $sql = "INSERT INTO usuarios(tipo,email,nombre_apellidos,pass) VALUES ($tipo,'$email','$nombreApellidos','$pass');";
+                $image = $_FILES['Imagen']['tmp_name'];             
             }
+            
+            $contenido_imagen = base64_encode(file_get_contents($image));
+            $sql = "INSERT INTO usuarios VALUES ($tipo,'$email','$nombreApellidos','$pass','$contenido_imagen');";
+            
              if(!mysqli_query($mysqli,$sql))
             {
                 die("Error: " .mysqli_error($mysqli));

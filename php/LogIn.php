@@ -42,8 +42,10 @@
                 }
                 $row = mysqli_fetch_array($resultado);
                 if($row['email']==$email){
+                    //inicioSesion();
+                    //phpinfo();
                     sleep(3);
-                    header("location:Layout.php");
+                    header("location:Layout.php?email=".$_REQUEST['dirCorreo']);
                 }else{
                     echo "Usuario o contraseña incorrectos, prueba de nuevo. <br>";
                     echo "<a href=\"javascript:history.back()\">Volver a atras</a>";
