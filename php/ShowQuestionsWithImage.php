@@ -15,8 +15,11 @@
             die("Fallo al conectar con la base de datos: " .mysqli_connect_error());
         }
         
-        $sql = "SELECT * FROM preguntas;";
-        $resul = mysqli_query($link,$sql);
+        $sql = "SELECT * FROM preguntas WHERE email=\"".$_GET['email']."\";";
+        $resul = mysqli_query($link,$sql,MYSQLI_USE_RESULT);
+        if(!$resul){
+            die("Error: ".mysqli_error($link));
+        }
         
         echo "<table border = ><tr><th>Email</th><th>Enunciado</th><th>Respuesta Correcta</th><th>Respuesta Incorrecta 1</th> <th>Respuesta Incorrecta 2</th><th>Respuesta Incorrecta 3</th><th>Complejidad</th><th>Tema</th><th>Imagen</th></tr>";
         while($row = mysqli_fetch_array($resul)){
