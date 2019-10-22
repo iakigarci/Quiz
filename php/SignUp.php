@@ -86,9 +86,10 @@
             {
                 die("Error: " .mysqli_error($mysqli));
             }
-            sleep(3);
-            header("location:LogIn.php");
-            
+            echo "<script>
+                    alert('Registro realizado correctamente. Pulsa aceptar para acceder a la pantalla de LogIn.');
+                    window.location.href='LogIn.php';
+                </script>";        
         }
     
         ?>
