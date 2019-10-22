@@ -41,9 +41,13 @@
                     die("Error: ".mysqli_error($mysqli));
                 }
                 $row = mysqli_fetch_array($resultado);
-                if($row['email']==$email){;
-                    sleep(3);
-                    header("location:Layout.php?email=".$_REQUEST['dirCorreo']);
+                if($row['email']==$email){
+                   /* sleep(3);
+                    header("location:Layout.php?email=".$_REQUEST['dirCorreo']);*/
+                    echo "<script>
+                    alert('Inicio de sesion realizado correctamente. Pulsa aceptar para acceder a la pantalla principal.');
+                    window.location.href='LogIn.php?email=".$_REQUEST['dirCorreo']."';
+                    </script>";  
                 }else{
                     echo "Usuario o contraseña incorrectos, prueba de nuevo. <br>";
                     echo "<a href=\"javascript:history.back()\">Volver a atras</a>";

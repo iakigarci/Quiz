@@ -7,11 +7,11 @@
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
     <div>
-
-      <h2>Adios, vuelve cuando quieras</h2>
         <?php
-            sleep(2);
-            header("location:Layout.php");
+            echo "<script>
+                    alert('Adios, vuelve cuando quieras.');
+                    window.location.href='Layout.php';
+                </script>";  
         ?>
       
     </div>
