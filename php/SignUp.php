@@ -38,18 +38,29 @@
                 $regexAlu = "/^[a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))$/";
                 $regexProf = "/^[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es))$/";
                 $regexPass = "/^.{6,}$/";
+                $regexNombre = "/(\w.+\s).+/";
                 
                 $resulAlu = preg_match($regexAlu,$_REQUEST['dirCorreo']);
                 if(($_REQUEST['tipoUsu']=="1") && $resulAlu){
                     if($_REQUEST['pass']==$_REQUEST['passR']&&preg_match($regexPass,$_REQUEST['pass'])){
-                        introducirNuevoUsuario();
+                        if(preg_match($regexNombre,$_REQUEST['nombreApellidos'])){
+                            introducirNuevoUsuario();
+                        }else{
+                           echo"Debes introducir tu nombre y al menos un apellido.<br>";
+                            echo "<a href=\"javascript:history.back()\">Volver a atras</a>"; 
+                        }                       
                     }else{
                         echo" Las contraseñas tienen menos de 6 caracteres o no coinciden.<br>";
                         echo "<a href=\"javascript:history.back()\">Volver a atras</a>";
                     }
                 }elseif($_REQUEST['tipoUsu']=="2" && preg_match($regexProf,$_REQUEST['dirCorreo'])){
                     if($_REQUEST['pass']==$_REQUEST['passR']&&preg_match($regexPass,$_REQUEST['pass'])){
-                        introducirNuevoUsuario();
+                        if(preg_match($regexNombre,$_REQUEST['nombreApellidos'])){
+                            introducirNuevoUsuario();
+                        }else{
+                            echo"Debes introducir tu nombre y al menos un apellido.<br>";
+                            echo "<a href=\"javascript:history.back()\">Volver a atras</a>"; 
+                        } 
                     }else{
                         echo" Las contraseñas tienen menos de 6 caracteres o no coinciden.<br>";
                         echo "<a href=\"javascript:history.back()\">Volver a atras</a>";
