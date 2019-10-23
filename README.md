@@ -4,14 +4,9 @@
     <meta charset="utf-8">
   </head>
   <body>
-    <h1>Programación Básica</h1>
-    <p>Laboratories coded in ADA and Python languages. There are 10 laboratories and one of them is a Twitter API. </p>
-    <p>List of concepts learned: </p>
-    <ul>
-      <li>Pointers</li>
-      <li>Twitter API in Python</li>
-      <li>Python dictionary</li>
-      <li>ADA vectors,listed structure, records and arrays</li>
-    </ul>
+    <h1>Proyecto Sistemas Web</h1>
+    <p> Proyecto realiado por <strong>Gorka Alvarez</strong> e <strong>Iñaki García</strong>.</p>
+    <p> Para acceder a la página web, click-a en el link</p>
+    <a href="http://sw19-20.000webhostapp.com/ProyectoWS19G18/php/Layout.php">Link a la páfina web </a>
   </body>
 </html>
