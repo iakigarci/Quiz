@@ -39,7 +39,7 @@
                                 die("Error: " .mysqli_error($mysqli));
                             }
                             echo "Registro añadido<br>";
-                            echo "<a href=\"ShowQuestionsWithImage.php\">Click en este enlace para ver todos los registros.</a>";
+                            echo "<a href=\"ShowQuestionsWithImage.php?email=".$_GET['email']."\">Click en este enlace para ver todos los registros.</a>";
                             mysqli_close($mysqli);
                      }else{
                          echo "El enunciado de la pregunta debe tener mas de 10 caracteres.<br>";

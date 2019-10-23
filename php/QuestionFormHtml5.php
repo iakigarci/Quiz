@@ -10,9 +10,9 @@
   <section class="main" id="s1">
     <div>
 
-    <form action="AddQuestionWithImage.php" name="fquestion" id="fquestion" method="post" enctype="multipart/form-data">
-            <p>Introduce tu dirección de correo: *</p>
-            <input type="email" size="60" id="dirCorreo" name="dirCorreo" required >
+    <form action="AddQuestionWithImage.php?email=<?php echo $_GET['email'];?>" name="fquestion" id="fquestion" method="post" enctype="multipart/form-data">
+            <p>Dirección de correo: </p>
+            <input type="email" readonly size="60" id="dirCorreo" name="dirCorreo" value="<?php echo $_GET['email'];?>" required >
             <p>Introduce el enunciado de la pregunta: *</p>
             <input type="text" size="60" id="nombrePregunta" name="nombrePregunta" required>
             <p>Respuesta correcta: *</p>
@@ -32,7 +32,7 @@
             <p>Introduce el tema de la pregunta: *</p>
             <input type="text" size="60" id="temaPregunta" name="temaPregunta" required>
             <div id="selector">
-            <input type="file" id="file" accept="image/*" name="Imagen" required>
+            <input type="file" id="file" accept="image/*" name="Imagen">
             </div>
             <p> <input type="submit" id="submit" value="Enviar"> <input type="reset" value="Limpiar"></p>
         </form>
