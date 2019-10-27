@@ -1,74 +1,46 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <?php include '../html/Head.html' ?>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
-  </script>
-  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
-  crossorigin="anonymous"> -->
+  <?php include '../html/Head.html'?>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/ShowImageInForm.js"></script>
+    <script src="../js/ValidateFieldsQuestion.js"></script>
 </head>
-
 <body>
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
     <div>
-      <form id='fquestion' method="POST" name='fquestion' action="AddQuestion.php" enctype="multipart/form-data">
-        <div>
-          <label for="dirCorreo">Correo electrónico</label>
-          <input type="text" id="dirCorreo"><br><br>
-        </div>
-        <div>
-          <label for="enunciadoPre">Enunciado de la pregunta</label>
-          <input type="text" id="enunciadoPre"><br><br>
-        </div>
-        <div>
-          <label for="resCorrecta">Respuesta correcta</label>
-          <input type="text" id="resCorrecta"><br><br>
-        </div>
-        <div>
-          <label for="resInc1">Respuesta incorrecta 1</label>
-          <input type="text" id="resInc1"><br><br>
-        </div>
-        <div>
-          <label for="resInc2">Respuesta incorrecta 2</label>
-          <input type="text" id="resInc2"><br><br>
-        </div>
-        <div>
-          <label for="resInc3">Respuesta incorrecta 3</label>
-          <input type="text" id="resInc3"><br><br>
-        </div>
-        <div>
-          <label for="dificultad">Selecciona dificultad</label>
-          <select name="dificultad" id="dificultad">
-            <option id="baja" value="1">Baja</option>
-            <option id="media" value="2">Media</option>
-            <option id="alta" value="3">Dificil</option>
-          </select>
-          <br><br>
-        </div>
-        <div>
-          <label for="tema">Tema</label>
-          <input type="text" id="tema"><br><br>
-        </div>
-        <div>
-          <label for="imagen">Selecciona una imagen</label>
-          <input type="file" name="imagen" id="imagen">
-        </div>
-        <br><br>
-        <div>
-          <input type="submit" value="Submit" id="submit_b">
-        </div>
-      </form>
+        <form action="AddQuestionWithImage.php" name="fquestion" id="fquestion" method="post" enctype="multipart/form-data">
+            <p>Introduce tu dirección de correo: *</p>
+            <input type="text" size="60" id="dirCorreo" name="Direccion Correo Electronico">
+            <p>Introduce el enunciado de la pregunta: *</p>
+            <input type="text" size="60" id="nombrePregunta" name="Enunciado Pregunta">
+            <p>Respuesta correcta: *</p>
+            <input type="text" size="60" id="respuestaCorrecta" name="Respuesta Correcta">
+            <p>Respuesta incorrecta1: *</p>
+            <input type="text" size="60" id="respuestaIncorrecta1" name="Respuesta Incorrecta 1">
+            <p>Respuesta incorrecta2: *</p>
+            <input type="text" size="60" id="respuestaIncorrecta2" name="Respuesta Incorrecta 2">
+            <p>Respuesta incorrecta3: *</p>
+            <input type="text" size="60" id="respuestaIncorrecta3" name="Respuesta Incorrecta 3">
+            <p>Complejidad de la pregunta: *</p>
+            <select id="complejidad" >
+                <option value="baja">Baja</option>
+                <option value="media" selected>Media</option>
+                <option value="alta">Alta</option>
+            </select>
+            <p>Introduce el tema de la pregunta: *</p>
+            <input type="text" size="60" id="temaPregunta" name="Tema de la Pregunta">
+            <div id="selector">
+            <input type="file" id="file" accept="image/*" name="Imagen">
+            </div>
+
+            
+            <p> <input type="submit" id="submit" value="Enviar"> <input type="reset" value="Limpiar"></p>
+        </form>
+        
     </div>
   </section>
-  </form>
-  </div>
-  </section>
-
   <?php include '../html/Footer.html' ?>
-  <script src="../js/ValidateFieldsQuestion.js"></script>
-  <script src="../js/ShowImageInForm.js"></script>
 </body>
-
 </html>

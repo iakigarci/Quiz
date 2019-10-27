@@ -1,33 +1,45 @@
-$(document).ready(function() {
-  $("#submit_b").click(function() {
-    var bol = true;
-    $("form :input").each(function() {
-      var input = $(this);
-      if (input.val() == "") {
-        alert("No puede quedar vacio el campo con id: " + input.attr("id"));
-      } else if (input.attr("id") == "dirCorreo") {
-        if (comprobarMail($(this).val())) {
-        } else {
-          bol = false;
+function validarFormulario(){
+    
+    var resul = true;
+    $("form :input").each(function(){
+        var input = $(this);
+        if(input.val()==""){
+            resul = false;
+            alert("El campo "+ "\' "+ input.attr("name")+"\'"+" esta vacio.");
+
+        }else{
+            if(input.attr("id")=="dirCorreo"){
+                resul = validarCorreo(input.val());
+                if(!resul){
+                    alert("El correo electronico introducido no es correcto.");
+                }
+            }else if(input.attr("id")=="nombrePregunta"){
+                if(input.val().length<10){
+                    alert("El enunciado de la pregunta es demasiado corto.");
+                    resul = false;
+                }
+            }
         }
-      } else if (input.attr("id") == "enunciadoPre") {
-        var txt = input.val();
-        if (txt.length < 10) {
-          alert("Enunciado de pregunta muy corto");
-          bol = false;
-        }
-      }
     });
-    return bol;
-  });
+    return resul;
+}
+
+$('document').ready(function(){
+    $('#submit').click(function(){
+        return validarFormulario();
+    });
 });
 
-function comprobarMail(mail) {
-  var regex = /^[a-zA-Z.!#$%&'*+/=?^_`{|}~-]+(?:[0-9]{3})+@ikasle.ehu.+(eus|es)\W*/;
-  if (regex.test(mail)) {
-    //Alumnos
-    return true;
-  } else {
+function validarCorreo(correo){
+
+    var regexAlu = /^[a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))$/;
+    var regexPro = /^[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es))$/;
+    
+    if(regexAlu.test(correo)){
+        return true;
+    }
+    else if(regexPro.test(correo)){
+        return true;
+    }
     return false;
-  }
 }
