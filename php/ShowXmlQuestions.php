@@ -10,7 +10,8 @@
     <section class="main" id="s1">
         <div>
             <?php
-            echo "<table border='1'>";
+            echo "<link rel='stylesheet' type='text/css' href='../styles/Tabla.css'>";
+            echo "<table class='tabla_style'>";
             echo "<tr>";
             echo "<th>Autor</th>";
             echo "<th>Enunciado</th>";
