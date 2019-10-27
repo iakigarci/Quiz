@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <assessmentItems>
 	<assessmentItem subject="Web" author="jvadillo001@ikasle.ehu.eus">
 		<itemBody>
-			<p>Tag HTML para a&#xF1;adir un formulario</p>
+			<p>Tag HTML para añadir un formulario</p>
 		</itemBody>
 		<correctResponse>
 			<value>
@@ -17,8 +17,8 @@
 	</assessmentItem>
 	<assessmentItem subject="Internet" author="rarruabarrena001@ikasle.ehu.eus">
 		<itemBody>
-			<p>Este protocolo acabar&#xE1; funcionando
-			incluso entre dos latas unidas por un cord&#xF3;n</p>
+			<p>Este protocolo acabará funcionando
+			incluso entre dos latas unidas por un cordón</p>
 		</itemBody>
 		<correctResponse>
 			<value>
@@ -29,6 +29,19 @@
 			<value> HTTP </value>
 			<value> SMTP </value>
 			<value> Ninguna es correcta </value>
+		</incorrectResponses>
+	</assessmentItem>
+	<assessmentItem subject="Horario" author="igarcia361@ikasle.ehu.eus">
+		<itemBody>
+			<p>¿Que hora es?</p>
+		</itemBody>
+		<correctResponse>
+			<value>8</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>1</value>
+			<value>2</value>
+			<value>3</value>
 		</incorrectResponses>
 	</assessmentItem>
 </assessmentItems>
