@@ -9,7 +9,7 @@
     <?php include '../php/Menus.php' ?>
     <section class="main" id="s1">
         <div>
-            <?php
+        <?php
             echo "<link rel='stylesheet' type='text/css' href='../styles/Tabla.css'>";
             echo "<table class='tabla_style'>";
             echo "<tr>";
