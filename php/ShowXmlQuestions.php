@@ -25,7 +25,8 @@
                 echo "<td>{$assessmentItem->correctResponse->value}</td>";
                 echo "</tr>";
             }
-            echo "</table>";
+            echo "</table>"; 
+            echo "<a href='../xml/Questions.xml'>Ver con xsl</a>";
             ?>
         </div>
     </section>
