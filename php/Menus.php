@@ -14,6 +14,7 @@
     <span><a href='Layout.php<?php echo $GLOBALS["email"];?>'>Inicio</a></span>
     <span id="insertq" style="display:none"><a href='QuestionFormHtml5.php<?php echo $GLOBALS["email"];?>'> Insertar Pregunta</a></span>
     <span id="showq" style="display:none"><a href='ShowQuestionsWithImage.php<?php echo $GLOBALS["email"];?>'>Ver Preguntas</a></span>
+    <span id="showqxml" style="display:none"><a href='ShowXmlQuestions.php<?php echo $GLOBALS["email"];?>'>Ver Preguntas en XML</a></span>
     <span><a href='Credits.php<?php echo $GLOBALS["email"];?>'>Creditos</a></span>
 </nav>
     <script src="../js/jquery-3.4.1.min.js"></script>
@@ -21,6 +22,7 @@
     function inicioSesion(){
         $('#insertq').show();
         $('#showq').show();
+        $('#showqxml').show();
         $('#register').hide();
         $('#login').hide();
         $('#logout').show();
@@ -29,11 +31,12 @@
     }
     
     function cierreSesion(){
-            $('#insertq').hide();
-            $('#showq').hide();
-            $('#register').show();
-            $('#login').show();
-            $('#logout').hide();
+        $('#insertq').hide();
+        $('#showq').hide();
+        $('#showqxml').hide();
+        $('#register').show();
+        $('#login').show();
+        $('#logout').hide();
     }
 </script>
 <?php

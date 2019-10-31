@@ -29,8 +29,15 @@
                             $respuestai3 = $_REQUEST['respuestaIncorrecta3'];
                             $complejidad = $_REQUEST['complejidad'];
                             $tema = $_REQUEST['temaPregunta'];
-                            $image = $_FILES['Imagen']['tmp_name'];
-                            $contenido_imagen = base64_encode(file_get_contents($image));
+                            if($_FILES['Imagen']['name'] == ""){
+                                $contenido_imagen = base64_encode("");
+                                //añado una imagen vacia.
+                            }else{
+                                $image = $_FILES['Imagen']['tmp_name'];
+                                $contenido_imagen = base64_encode(file_get_contents($image));
+                            }
+                            
+                            
 
                             $sql = "INSERT INTO preguntas(email, enunciado, respuestac, respuestai1, respuestai2, respuestai3, complejidad, tema, imagen) VALUES('$email', '$enunciado', '$respuestac', '$respuestai1', '$respuestai2', '$respuestai3', $complejidad, '$tema', '$contenido_imagen')";
 
@@ -39,7 +46,7 @@
                                 die("Error: " .mysqli_error($mysqli));
                             }
                             echo "Registro añadido<br>";
-                            echo "<a href=\"ShowQuestionsWithImage.php?email=".$_GET['email']."\">Click en este enlace para ver todos los registros.</a>";
+                            //echo "<a href=\"ShowQuestionsWithImage.php?email=".$_GET['email']."\">Click en este enlace para ver todos los registros.</a>";
                             mysqli_close($mysqli);
                      }else{
                          echo "El enunciado de la pregunta debe tener mas de 10 caracteres.<br>";
@@ -52,6 +59,32 @@
             }          
           ?>
     </div>
+      
+      <div>
+        <?php
+            $ficheroPreguntas = simplexml_load_file('../xml/Questions.xml');
+            
+            $assessmentItem = $ficheroPreguntas->addChild('assessmentItem');
+            $assessmentItem->addAttribute('subject',$_REQUEST['temaPregunta']);
+            $assessmentItem->addAttribute('author',$_REQUEST['dirCorreo']);
+            
+            $itemBody = $assessmentItem->addChild('itemBody');
+                
+            $itemBody->addChild('p',$_REQUEST['nombrePregunta']);
+            
+            $correctResponse = $assessmentItem->addChild('correctResponse');
+            $correctResponse->addChild('value',$_REQUEST['respuestaCorrecta']);
+            
+            $incorrectResponses = $assessmentItem->addChild('incorrectResponses');
+            
+            $incorrectResponses->addChild('value',$_REQUEST['respuestaIncorrecta1']);
+            $incorrectResponses->addChild('value',$_REQUEST['respuestaIncorrecta2']);
+            $incorrectResponses->addChild('value',$_REQUEST['respuestaIncorrecta3']);
+          
+            $ficheroPreguntas->asXML('../xml/Questions.xml');
+            echo "Registro añadido en XML.<br>";
+          ?>
+      </div>
   </section>
   <?php include '../html/Footer.html' ?>
 </body>
