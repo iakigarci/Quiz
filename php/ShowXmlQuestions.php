@@ -9,22 +9,23 @@
         <div>
             <?php 
                 $xml = simplexml_load_file("../xml/Questions.xml");
-                echo "<table border=\"1\"><tr><th>Autor</th><th>Enunciado</th><th>Respuesta Correcta</th><th>Respuestas Incorrectas</th><th>Tema</th></tr>";
+                echo "<table border=\"1\"><tr bgcolor = \"#9acd32\"><th>Autor</th><th>Enunciado</th><th>Respuesta Correcta</th><th>Respuestas Incorrectas</th><th>Tema</th></tr>";
                 foreach($xml as $assessmentItem){
                     echo"<tr><td>".$assessmentItem["author"]."</td>";
                     echo"<td>".$assessmentItem->itemBody->p."</td>";
                     echo"<td>".$assessmentItem->correctResponse->value."</td>";
-                    echo"<td>";
+                    echo"<td><ul>";
                     
                     foreach($assessmentItem->incorrectResponses->value as $value){
-                        echo $value."<br>";
+                        echo "<li>".$value."</li>";
                     }
-                    echo"</td>";
+                    echo"</ul></td>";
                     
                     echo"<td>".$assessmentItem["subject"]."</td>";
                     echo"</tr>";
                 }
                 echo "</table>";
+                echo "<a href='../xml/Questions.xml'>Ver con xsl</a>";
             ?>
         </div>
     </section>
