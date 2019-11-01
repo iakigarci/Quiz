@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Usuarios</title>
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/GetUserInfo.js"></script>
+    </head>
+    <body>
+        <h1 style="text-align: center">Introduce tu correo electronico para autocompletar tus datos.</h1>
+        
+        <div style="text-align: center">
+            <form>
+                <div>
+                    <label><b>Correo Electronico:</b></label><br>
+                    <input name="email" id="email" type="email" size="50" required>
+                </div>
+                <div>
+                    <label><b>Numero de telefono:</b></label><br>
+                    <input name="tfno" id="tfno" type="text" size="10" readonly>
+                </div>
+                <div>
+                    <label><b>Nombre:</b></label><br>
+                    <input name="nombre" id="nombre" type="text" size="20" readonly>
+                </div>
+                <div>
+                    <label><b>Apellidos:</b></label><br>
+                    <input name="apellido" id="apellido" type="text" size="30" readonly>
+                </div>
+                <div>
+                    <p><button type="button" onclick="getUserInfo()">Autocompletar</button></p>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
