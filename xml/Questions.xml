@@ -45,4 +45,4 @@
 			<value>3</value>
 		</incorrectResponses>
 	</assessmentItem>
-</assessmentItems>
+<assessmentItem subject="a" author="igarcia361@ikasle.ehu.eus"><itemBody><p>Lorem Ipsum is simply dummy text of the printing and typesetting</p></itemBody><correctResponse><value>a</value></correctResponse><incorrectResponses><value>b</value><value>a</value><value>c</value></incorrectResponses></assessmentItem><assessmentItem subject="a" author="igarcia361@ikasle.ehu.eus"><itemBody><p>ddsdsaddasdaddasdasdasdadd</p></itemBody><correctResponse><value>a</value></correctResponse><incorrectResponses><value>b</value><value>a</value><value>c</value></incorrectResponses></assessmentItem></assessmentItems>

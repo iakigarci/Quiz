@@ -40,19 +40,28 @@
             }
 
             //Modificams el archivo XML
-            $xml = simplexml_load_file('../xml/Questions.xml');
-            $assessmentItem = $xml->addChild('assessmentItem');
-            $assessmentItem->addAttribute('subject', $tema);
-            $assessmentItem->addAttribute('author', $email);
-            $itemBody = $assessmentItem->addChild('itemBody');
-            $itemBody->addChild('p', $enunciado);
-            $correctResponse = $assessmentItem->addChild('correctResponse');
-            $correctResponse->addChild('value', $respuestac);
-            $incorrectResponses = $assessmentItem->addChild('incorrectResponses');
-            $incorrectResponses->addChild('value', $respuestai1);
-            $incorrectResponses->addChild('value', $respuestai2);
-            $incorrectResponses->addChild('value', $respuestai3);
-            $xml->asXML('../xml/Questions.xml');
+            $saved  = libxml_use_internal_errors(true);
+            $xml    = simplexml_load_file('../xml/Questions.xml');
+            $errors = libxml_get_errors();
+            libxml_use_internal_errors($saved);
+            if (!$xml) {
+              var_dump($errors);
+              die();
+            } else {
+              $assessmentItem = $xml->addChild('assessmentItem');
+              $assessmentItem->addAttribute('subject', $tema);
+              $assessmentItem->addAttribute('author', $email);
+              $itemBody = $assessmentItem->addChild('itemBody');
+              $itemBody->addChild('p', $enunciado);
+              $correctResponse = $assessmentItem->addChild('correctResponse');
+              $correctResponse->addChild('value', $respuestac);
+              $incorrectResponses = $assessmentItem->addChild('incorrectResponses');
+              $incorrectResponses->addChild('value', $respuestai1);
+              $incorrectResponses->addChild('value', $respuestai2);
+              $incorrectResponses->addChild('value', $respuestai3);
+
+              $xml->asXML('../xml/Questions.xml');
+            }
 
             echo "Registro añadido en la BD y en XML<br>";
             echo "<a href=\"ShowQuestionsWithImage.php?email=" . $_GET['email'] . "\">Click en este enlace para ver todos los registros.</a>";
