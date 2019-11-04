@@ -45,7 +45,7 @@
                             {
                                 die("Error: " .mysqli_error($mysqli));
                             }
-                            echo "Registro añadido<br>";
+                            echo "Registro añadido en la base de datos.<br>";
                             //echo "<a href=\"ShowQuestionsWithImage.php?email=".$_GET['email']."\">Click en este enlace para ver todos los registros.</a>";
                             mysqli_close($mysqli);
                      }else{
@@ -62,6 +62,7 @@
       
       <div>
         <?php
+           if(file_exists('../xml/Questions.xml')){
             $ficheroPreguntas = simplexml_load_file('../xml/Questions.xml');
             
             $assessmentItem = $ficheroPreguntas->addChild('assessmentItem');
@@ -83,6 +84,9 @@
           
             $ficheroPreguntas->asXML('../xml/Questions.xml');
             echo "Registro añadido en XML.<br>";
+           }else{
+                exit("No se ha podido guardar en XML, no se encuentra el fichero Questions.xml");
+           }
           ?>
       </div>
   </section>
