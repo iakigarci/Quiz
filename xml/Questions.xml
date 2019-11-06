@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="ShowXmlQuestions.xsl" type="text/xsl"?>
+<assessmentItems>
+	<assessmentItem subject="Web" author="jvadillo001@ikasle.ehu.eus">
+		<itemBody>
+			<p>Tag HTML para añadir un formulario</p>
+		</itemBody>
+		<correctResponse>
+			<value>
+				FORM
+			</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value> OBJECT </value>
+			<value> TABLE </value>
+			<value> DIV </value>
+		</incorrectResponses>
+	</assessmentItem>
+	<assessmentItem subject="Internet" author="rarruabarrena001@ikasle.ehu.eus">
+		<itemBody>
+			<p>Este protocolo acabará funcionando
+			incluso entre dos latas unidas por un cordón</p>
+		</itemBody>
+		<correctResponse>
+			<value>
+				TCP/IP
+			</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value> HTTP </value>
+			<value> SMTP </value>
+			<value> Ninguna es correcta </value>
+		</incorrectResponses>
+	</assessmentItem>
+	<assessmentItem subject="Horario" author="igarcia361@ikasle.ehu.eus">
+		<itemBody>
+			<p>¿Que hora es?</p>
+		</itemBody>
+		<correctResponse>
+			<value>8</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>1</value>
+			<value>2</value>
+			<value>3</value>
+		</incorrectResponses>
+	</assessmentItem>
+s<assessmentItem subject="b" author="galvarez024@ikasle.ehu.es"><itemBody><p>bbbbbbbbbbbbbbb</p></itemBody><correctResponse><value>bbb</value></correctResponse><incorrectResponses><value>b</value><value>b</value><value>b</value></incorrectResponses></assessmentItem></assessmentItems>
