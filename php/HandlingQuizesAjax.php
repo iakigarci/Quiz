@@ -6,6 +6,7 @@
     <script src="../js/ShowImageInForm.js"></script>
     <script src="../js/ValidateFieldsQuestion.js"></script>
     <script src="../js/ShowQuestionsAjax.js"></script>
+    <script src="../js/AddQuestionsAjax.js"></script>
 </head>
 <body>
   <?php include '../php/Menus.php' ?>
@@ -38,14 +39,21 @@
         </form>
         <div>
             <input type="button" id="verPreguntas" value="Ver preguntas" onClick="visualizar()"> 
-            <input type="button"id="insertarPregunta" value="Insertar pregunta" >
-            <input type="reset" id="resetForm" value="Resetear">
+            <input type="button" id="insertarPregunta" value="Insertar pregunta" >
+            <input type="reset" id="resetForm" value="Resetear" onClick="resetForm()">
         </div>
     </div>
     <div id="showQuestions">
-        
     </div>
+    <div id="insertQuestion"></div>
   </section>
   <?php include '../html/Footer.html' ?>
+  <script>
+  function resetForm(){
+      $("#showQuestions").empty();
+      $("#insertQuestions").empty();
+  }
+
+  </script>
 </body>
 </html>
