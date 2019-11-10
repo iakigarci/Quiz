@@ -15,6 +15,7 @@
         <span id="insertq" style="display:none"><a href='QuestionFormHtml5.php<?php echo $GLOBALS["email"]; ?>'> Insertar Pregunta</a></span>
         <span id="showq" style="display:none"><a href='ShowQuestionsWithImage.php<?php echo $GLOBALS["email"]; ?>'>Ver Preguntas</a></span>
         <span id="showx" style="display:none"><a href='ShowXmlQuestions.php<?php echo $GLOBALS["email"]; ?>'>Ver Preguntas XML</a></span>
+        <span id="inserta" style="display:none"><a href='HandlingQuizesAjax.php<?php echo $GLOBALS["email"]; ?>'> AJAX</a></span>
         <span><a href='Credits.php<?php echo $GLOBALS["email"]; ?>'>Creditos</a></span>
     </nav>
     <script src="../js/jquery-3.4.1.min.js"></script>
@@ -23,6 +24,7 @@
             $('#insertq').show();
             $('#showq').show();
             $('#showx').show();
+            $('#inserta').show();
             $('#register').hide();
             $('#login').hide();
             $('#logout').show();
@@ -34,6 +36,7 @@
             $('#insertq').hide();
             $('#showq').hide();
             $('#showx').hide();
+            $('#inserta').hide();
             $('#register').show();
             $('#login').show();
             $('#logout').hide();
