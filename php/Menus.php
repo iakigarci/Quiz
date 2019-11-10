@@ -3,6 +3,8 @@
     }else{
         $email = "";
     } ?>
+<script src="../js/cierreSesion.js"></script>
+<script src="../js/inicioSesion.js"></script>
 <div id='page-wrap'>
 <header class='main' id='h1'>
   <span class="right" id="register"><a href="SignUp.php">Registro</a></span>
@@ -18,31 +20,13 @@
     <span><a href='Credits.php<?php echo $GLOBALS["email"];?>'>Creditos</a></span>
 </nav>
     <script src="../js/jquery-3.4.1.min.js"></script>
-<script>
-    function inicioSesion(){
-        $('#insertq').show();
-        $('#showq').show();
-        $('#showqxml').show();
-        $('#register').hide();
-        $('#login').hide();
-        $('#logout').show();
-        $("#h1").append("<p><?php echo $_GET["email"];?></p>");
-        $("#h1").append("<img width=\"50\" height=\"60\" src=\"data:image/*;base64,<?php echo getImagenDeBD();?>\" alt=\"Imagen\"/>");
-    }
-    
-    function cierreSesion(){
-        $('#insertq').hide();
-        $('#showq').hide();
-        $('#showqxml').hide();
-        $('#register').show();
-        $('#login').show();
-        $('#logout').hide();
-    }
-</script>
+
 <?php
     
     if(isset($_GET['email'])){
-        echo "<script>inicioSesion();</script>";
+        $email = $_GET['email'];
+        $img = getImagenDeBD();
+        echo "<script>inicioSesion(\"".$img."\",\"".$email."\");</script>";
     }else{
 
         echo "<script>cierreSesion();</script>";
