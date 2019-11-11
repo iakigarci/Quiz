@@ -2,22 +2,21 @@ $(document).ready(function () {
     $("#insertarPregunta").click(function () {
         /* var formData = new FormData($("#fquestion"));
         console.log(formData); */
-        var jqxhr = $.get("../php/AddQuestionWithImage.php", $("#fquestion").serialize(), function (data) {
-            console.log(data);
+        /* var jqxhr = $.get("../php/AddQuestionWithImage.php", new FormData($('form')[0]), function (data) {
             $('#insertQuestions').fadeIn(1000).html(data);
         });
         jqxhr.fail(function () {
             $('#insertQuestions').fadeIn().html('<p class="error"><strong>El servidor parece que  no responde</p>');
-        });
-        /* console.log("1");
+        }); */
         $.ajax({
-            type: "GET",
+            type: "POST",
             url: '../php/AddQuestionWithImage.php',
-            data: $("#fquestion").serialize(),
+            data: new FormData($('form')[0]),
+            processData: false,
+            contentType: false,
             success: function (response) {
-                console.log(response);
                 $("#insertQuestions").fadeIn(1000).html(response);
             }
-        }); */
+        });
     });
 });
