@@ -2,13 +2,14 @@
 <html>
 
 <head>
-  <?php include '../html/Head.html' ?>
+  <!-- <?php include '../html/Head.html' ?> -->
 </head>
 
 <body>
-  <?php include '../php/Menus.php' ?>
+  <!-- <?php include '../php/Menus.php' ?> -->
   <section class="main" id="s1">
     <div>
+      <h1>HOLA</h1>
       <?php
       if (isset($_REQUEST['dirCorreo'])) {
         $regexMail = "/((^[a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))$)|^[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es))$)/";
@@ -83,7 +84,7 @@
       ?>
     </div>
   </section>
-  <?php include '../html/Footer.html' ?>
+  <!-- <?php include '../html/Footer.html' ?> -->
 </body>
 
 </html>
