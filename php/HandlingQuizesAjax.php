@@ -37,7 +37,7 @@
             <div id="selector">
             <input type="file" id="file" accept="image/*" name="Imagen">
             </div>
-            <p> <input type="button" id="submit" value="Enviar"> <input type="reset" value="Limpiar Formulario"></p>
+            <p> <input type="button" id="submit" value="Enviar" onclick="enviarForm()"> <input type="reset" value="Limpiar Formulario"></p>
         </form>
     </div>
     <div id="buttons">
