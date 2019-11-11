@@ -1,6 +1,5 @@
 function inicioSesion(img,email){
-    $('#insertq').show();
-    $('#showq').show();
+    $('#questions').show();
     $('#register').hide();
     $('#login').hide();
     $('#logout').show();

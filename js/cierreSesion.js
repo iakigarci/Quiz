@@ -1,6 +1,5 @@
 function cierreSesion(){
-    $('#insertq').hide();
-    $('#showq').hide();
+    $('#questions').hide();
     $('#register').show();
     $('#login').show();
     $('#logout').hide();
