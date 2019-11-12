@@ -7,10 +7,26 @@
     <script src="../js/ShowQuestionsAjax.js"></script>
     <script src="../js/CleanPage.js"></script>
     <script src="../js/AddQuestionsAjax.js"></script>
+    <script src="../js/CountQuestionsAjax.js"></script>
 </head>
 <body>
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
+      <div id="users">
+      
+      </div>
+      <div id="total-questions">
+
+      </div>
+      
+      
+    <div id="buttons">
+        <p>
+        <input type="button" id="insertq-button" value="Insertar Preguntas" onclick="verFormulario()">
+        <input type="button" id="showq-button" value="Ver Preguntas" onclick="verPreguntas()">
+        <input type="button" id="clean-button" value="Limpiar Pagina" onclick="clean()">
+        </p>   
+    </div>
     <div id="form" style="display: none">
 
     <form name="fquestion" id="fquestion" method="post" enctype="multipart/form-data">
@@ -40,13 +56,7 @@
             <p> <input type="button" id="submit" value="Enviar" onclick="enviarForm()"> <input type="reset" value="Limpiar Formulario"></p>
         </form>
     </div>
-    <div id="buttons">
-        <p>
-        <input type="button" id="insertq-button" value="Insertar Preguntas" onclick="verFormulario()">
-        <input type="button" id="showq-button" value="Ver Preguntas" onclick="verPreguntas()">
-        <input type="button" id="clean-button" value="Limpiar Pagina" onclick="clean()">
-        </p>   
-    </div>
+
     <div id="tabla-preguntas">
     </div>
 
