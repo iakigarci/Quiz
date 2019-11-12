@@ -32,17 +32,4 @@
 			<value> Ninguna es correcta </value>
 		</incorrectResponses>
 	</assessmentItem>
-	<assessmentItem subject="Horario" author="igarcia361@ikasle.ehu.eus">
-		<itemBody>
-			<p>¿Que hora es?</p>
-		</itemBody>
-		<correctResponse>
-			<value>8</value>
-		</correctResponse>
-		<incorrectResponses>
-			<value>1</value>
-			<value>2</value>
-			<value>3</value>
-		</incorrectResponses>
-	</assessmentItem>
-s<assessmentItem subject="b" author="galvarez024@ikasle.ehu.es"><itemBody><p>bbbbbbbbbbbbbbb</p></itemBody><correctResponse><value>bbb</value></correctResponse><incorrectResponses><value>b</value><value>b</value><value>b</value></incorrectResponses></assessmentItem><assessmentItem subject="as" author="igarcia361@ikasle.ehu.eus"><itemBody><p>aadsasasasadsadasa</p></itemBody><correctResponse><value>a</value></correctResponse><incorrectResponses><value>a</value><value>a</value><value>a</value></incorrectResponses></assessmentItem><assessmentItem subject="as" author="igarcia361@ikasle.ehu.eus"><itemBody><p>aadsasasasadsadasa</p></itemBody><correctResponse><value>a</value></correctResponse><incorrectResponses><value>a</value><value>a</value><value>a</value></incorrectResponses></assessmentItem><assessmentItem subject="as" author="igarcia361@ikasle.ehu.eus"><itemBody><p>aadsasasasadsadasa</p></itemBody><correctResponse><value>a</value></correctResponse><incorrectResponses><value>a</value><value>a</value><value>a</value></incorrectResponses></assessmentItem><assessmentItem subject="as" author="igarcia361@ikasle.ehu.eus"><itemBody><p>aadsasasasadsadasa</p></itemBody><correctResponse><value>a</value></correctResponse><incorrectResponses><value>a</value><value>a</value><value>a</value></incorrectResponses></assessmentItem><assessmentItem subject="as" author="igarcia361@ikasle.ehu.eus"><itemBody><p>aadsasasasadsadasa</p></itemBody><correctResponse><value>a</value></correctResponse><incorrectResponses><value>a</value><value>a</value><value>a</value></incorrectResponses></assessmentItem><assessmentItem subject="as" author="igarcia361@ikasle.ehu.eus"><itemBody><p>aadsasasasadsadasa</p></itemBody><correctResponse><value>a</value></correctResponse><incorrectResponses><value>a</value><value>a</value><value>a</value></incorrectResponses></assessmentItem></assessmentItems>
+<assessmentItem subject="tema" author="igarcia361@ikasle.ehu.eus"><itemBody><p>Preguntaaaaaaaaaaaaaaaaaa</p></itemBody><correctResponse><value>a</value></correctResponse><incorrectResponses><value>b</value><value>d</value><value>c</value></incorrectResponses></assessmentItem></assessmentItems>

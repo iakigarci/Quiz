@@ -7,14 +7,22 @@
     <script src="../js/ValidateFieldsQuestion.js"></script>
     <script src="../js/ShowQuestionsAjax.js"></script>
     <script src="../js/AddQuestionsAjax.js"></script>
+    <script src="../js/CountQuestionsAjax.js"></script>
 </head>
 <body>
-  <?php include '../php/Menus.php' ?>
+  <?php include '../php/Menus.php'?>
   <section class="main" id="s1">
+
+  <div class="preguntasTotales" >
+    <p>Mis preguntas totales: <a id="misPreguntas">0</a> / <a id="todasPreguntas">0</a></p>
+  </div>
+  <div class="usuariosConectados">
+  </div>
     <div>
-    <form action="AddQuestionWithImage.php?email=<?php echo $_GET['email'];?>" name="fquestion" id="fquestion" method="post" enctype="multipart/form-data">
+
+    <form action="AddQuestionWithImage.php?email=<?php echo $_GET['email']; ?>" name="fquestion" id="fquestion" method="post" enctype="multipart/form-data">
             <p>Dirección de correo: </p>
-            <input type="email" readonly size="60" id="dirCorreo" name="dirCorreo" value="<?php echo $_GET['email'];?>" required >
+            <input type="email" readonly size="60" id="dirCorreo" name="dirCorreo" value="<?php echo $_GET['email']; ?>" required >
             <p>Introduce el enunciado de la pregunta: *</p>
             <input type="text" size="60" id="nombrePregunta" name="nombrePregunta" required>
             <p>Respuesta correcta: *</p>
@@ -38,7 +46,7 @@
             </div>
         </form>
         <div>
-            <input type="button" id="verPreguntas" value="Ver preguntas" onClick="visualizar()"> 
+            <input type="button" id="verPreguntas" value="Ver preguntas" onClick="visualizar()">
             <input type="button" id="insertarPregunta" value="Insertar pregunta" >
             <input type="reset" id="resetForm" value="Resetear" onClick="resetForm()">
         </div>
@@ -47,7 +55,7 @@
     </div>
     <div id="insertQuestions"></div>
   </section>
-  <?php include '../html/Footer.html' ?>
+  <?php include '../html/Footer.html'?>
   <script>
   function resetForm(){
       $("#showQuestions").empty();
