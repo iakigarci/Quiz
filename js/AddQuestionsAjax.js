@@ -9,7 +9,7 @@ $(document).ready(function () {
             $('#insertQuestions').fadeIn().html('<p class="error"><strong>El servidor parece que  no responde</p>');
         }); */
         $.ajax({
-            type: "POST",
+            type: "GET",
             url: '../php/AddQuestionWithImage.php',
             data: new FormData($('form')[0]),
             processData: false,
