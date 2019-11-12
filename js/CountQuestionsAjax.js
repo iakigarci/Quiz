@@ -1,13 +1,13 @@
-$('document').ready(function(){
-    var email = $('#dirCorreo').val();
-    setInterval(verNumeroPreguntas(email),10000);
+$(document).ready(function(){   
+    setInterval(verNumeroPreguntas(),10000);
 });
 
-function verNumeroPreguntas(miEmail){
+function verNumeroPreguntas(){
+    var miEmail = $('#dirCorreo').val();
     var numMisPreguntas = misPreguntas(miEmail);
     var totPreguntas = totalPreguntas();
     $('#total-questions').append("<h3>Tus Preguntas/Total Preguntas</h3>");
-    $('#total-questions').append("<table border=\"1\" width=\"1200\"><tr><th>"+numMisPreguntas+"/"+totPreguntas+"</th></tr></table>");
+    $('#total-questions').append("<h4>"+numMisPreguntas+"/"+totPreguntas+"</h4>");
 }
 
 function totalPreguntas(){

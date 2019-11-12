@@ -8,17 +8,17 @@
     <script src="../js/CleanPage.js"></script>
     <script src="../js/AddQuestionsAjax.js"></script>
     <script src="../js/CountQuestionsAjax.js"></script>
+    <script src="../js/CountUsersAjax.js"></script>
 </head>
 <body>
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
-      <div id="users">
+      <div id="users" class="tabla">
       
       </div>
-      <div id="total-questions">
-
+      <div id="total-questions" class="tabla">
+          
       </div>
-      
       
     <div id="buttons">
         <p>

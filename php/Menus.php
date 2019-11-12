@@ -9,7 +9,7 @@
 <header class='main' id='h1'>
   <span class="right" id="register"><a href="SignUp.php">Registro</a></span>
         <span class="right" id="login"><a href="LogIn.php">Login</a></span>
-        <span class="right" id="logout" style="display:none;"><a href="LogOut.php">Logout</a></span>
+        <span class="right" id="logout" style="display:none;"><a href="DecreaseGlobalCounter.php?email="<?php $GLOBALS['email']?>>Logout</a></span>
 
 </header>
 <nav class='main' id='n1' role='navigation'>
