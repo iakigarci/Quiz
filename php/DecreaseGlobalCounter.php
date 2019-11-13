@@ -1,11 +1,7 @@
 <?php
     $users = simplexml_load_file('../xml/Counter.xml');
-
-    $users['cont'] -= 1;
-
-    $user = $users->xpath('//user[email="'.$_GET['email'].'"]');
-    $parent = $user[0]->xpath("parent::*");
-    unset($parent);
+    $cont = $users->user;
+    $users->user[0] = $cont-1;
 
     $users->asXML('../xml/Counter.xml');
     

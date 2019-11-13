@@ -1,5 +1,5 @@
 $(document).ready(function(){   
-    setInterval(cuantosConectados,1000);
+    setInterval(cuantosConectados,5000);
 });
 
 function cuantosConectados(){
@@ -11,7 +11,7 @@ function cuantosConectados(){
         cache: false,
         success: function(xml){
             var numUsus = 0;
-            numUsus = $(xml).find("users").attr('cont');        
+            numUsus = $(xml).find("user").text();        
             $('#usuariosTotales').text(numUsus);    
         } 
     });

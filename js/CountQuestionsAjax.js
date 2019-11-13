@@ -1,5 +1,5 @@
 $(document).ready(function(){   
-    setInterval(verNumeroPreguntas,1000);
+    setInterval(verNumeroPreguntas,5000);
 });
 
 

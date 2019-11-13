@@ -1,10 +1,7 @@
 <?php
     $users = simplexml_load_file('../xml/Counter.xml');
-    $users['cont'] += 1;
-    $contador = $users['cont'];
-    $user = $users->addChild('user');
-    $user->addAttribute("id",$contador);
-    $user->addChild("email",$_GET['email']);
+    $cont = $users->user;
+    $users->user[0] = $cont+1;
 
     $users->asXML('../xml/Counter.xml');
     
