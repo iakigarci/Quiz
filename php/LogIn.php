@@ -40,8 +40,9 @@
                 if(!$resultado){
                     die("Error: ".mysqli_error($mysqli));
                 }
-                $row = mysqli_fetch_array($resultado);
+                $row = mysqli_fetch_array($resultado); 
                 if($row['email']==$email){
+                  include '../php/IncreaseGlobalCounter.php';
                    /* sleep(3);
                     header("location:Layout.php?email=".$_REQUEST['dirCorreo']);*/
                     echo "<script>
@@ -52,12 +53,8 @@
                     echo "Usuario o contraseña incorrectos, prueba de nuevo. <br>";
                     echo "<a href=\"javascript:history.back()\">Volver a atras</a>";
                 }
-                
             }
-    
-    
         ?>
-      
       </div>
   </section>
   <?php include '../html/Footer.html' ?>

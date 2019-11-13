@@ -18,7 +18,8 @@
   </div>
   <div class="usuariosConectados">
   </div>
-    <div>
+    <p>Número de usuarios logeados: <a id="usersLogin">0</a></p>
+  <div>
 
     <form action="AddQuestionWithImage.php?email=<?php echo $_GET['email']; ?>" name="fquestion" id="fquestion" method="post" enctype="multipart/form-data">
             <p>Dirección de correo: </p>

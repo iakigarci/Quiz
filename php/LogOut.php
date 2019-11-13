@@ -8,6 +8,7 @@
   <section class="main" id="s1">
     <div>
         <?php
+          include '../php/DecreaseGlobalCounter.php';
             echo "<script>
                     alert('Adios, vuelve cuando quieras.');
                     window.location.href='Layout.php';
@@ -16,6 +17,7 @@
       
     </div>
   </section>
+  <?php include '../php/DecreaseGlobalCounter.php'?>;
   <?php include '../html/Footer.html' ?>
 </body>
 </html>
