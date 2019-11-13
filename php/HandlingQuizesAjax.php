@@ -14,10 +14,12 @@
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
       <div id="users" class="tabla">
-      
+        <h3>Usuarios conectados</h3>
+        <h4><a id="usuariosTotales">0</a></h4>  
       </div>
       <div id="total-questions" class="tabla">
-          
+          <h3>Tus Preguntas/Total Preguntas</h3>
+          <h4><a id="contEmail">0</a> / <a id="contTotal">0</a></h4>
       </div>
       
     <div id="buttons">
