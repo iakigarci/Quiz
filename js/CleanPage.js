@@ -1,8 +1,8 @@
-function clean(){
+function clean() {
     document.getElementById('tabla-preguntas').innerHTML = '';
     $('#form').hide();
 }
 
-function addQuestion(){
-    
-}
+function limpiarForm() {
+    $("#verImagen").css('display', 'none');
+} 

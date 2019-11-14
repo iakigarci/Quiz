@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <?php include '../html/Head.html'?>
+  <!-- <?php include '../html/Head.html'?> -->
 </head>
 <body>
-  <?php include '../php/Menus.php' ?>
+  <!-- <?php include '../php/Menus.php' ?> -->
   <section class="main" id="s1">
     <div>
          <?php
@@ -48,13 +48,14 @@
                             echo "Registro añadido en la base de datos.<br>";
                             //echo "<a href=\"ShowQuestionsWithImage.php?email=".$_GET['email']."\">Click en este enlace para ver todos los registros.</a>";
                             mysqli_close($mysqli);
+                            anadirAXML();
                      }else{
                          echo "El enunciado de la pregunta debe tener mas de 10 caracteres.<br>";
-                         echo"<a href='javascript:history.back()'>Volver al formulario.</a>";
+                         /* echo"<a href='javascript:history.back()'>Volver al formulario.</a>"; */
                      }
                  }else{
                     echo "El correo electronico no es correcto.<br>";
-                    echo"<a href='javascript:history.back()'>Volver al formulario.</a>";
+                    /* echo"<a href='javascript:history.back()'>Volver al formulario.</a>"; */
                  }
             }          
           ?>
@@ -62,34 +63,36 @@
       
       <div>
         <?php
-           if(file_exists('../xml/Questions.xml')){
-            $ficheroPreguntas = simplexml_load_file('../xml/Questions.xml');
+          function anadirAXML(){
+            if(file_exists('../xml/Questions.xml')){
+              $ficheroPreguntas = simplexml_load_file('../xml/Questions.xml');
+              
+              $assessmentItem = $ficheroPreguntas->addChild('assessmentItem');
+              $assessmentItem->addAttribute('subject',$_REQUEST['temaPregunta']);
+              $assessmentItem->addAttribute('author',$_REQUEST['dirCorreo']);
+              
+              $itemBody = $assessmentItem->addChild('itemBody');
+                  
+              $itemBody->addChild('p',$_REQUEST['nombrePregunta']);
+              
+              $correctResponse = $assessmentItem->addChild('correctResponse');
+              $correctResponse->addChild('value',$_REQUEST['respuestaCorrecta']);
+              
+              $incorrectResponses = $assessmentItem->addChild('incorrectResponses');
+              
+              $incorrectResponses->addChild('value',$_REQUEST['respuestaIncorrecta1']);
+              $incorrectResponses->addChild('value',$_REQUEST['respuestaIncorrecta2']);
+              $incorrectResponses->addChild('value',$_REQUEST['respuestaIncorrecta3']);
             
-            $assessmentItem = $ficheroPreguntas->addChild('assessmentItem');
-            $assessmentItem->addAttribute('subject',$_REQUEST['temaPregunta']);
-            $assessmentItem->addAttribute('author',$_REQUEST['dirCorreo']);
-            
-            $itemBody = $assessmentItem->addChild('itemBody');
-                
-            $itemBody->addChild('p',$_REQUEST['nombrePregunta']);
-            
-            $correctResponse = $assessmentItem->addChild('correctResponse');
-            $correctResponse->addChild('value',$_REQUEST['respuestaCorrecta']);
-            
-            $incorrectResponses = $assessmentItem->addChild('incorrectResponses');
-            
-            $incorrectResponses->addChild('value',$_REQUEST['respuestaIncorrecta1']);
-            $incorrectResponses->addChild('value',$_REQUEST['respuestaIncorrecta2']);
-            $incorrectResponses->addChild('value',$_REQUEST['respuestaIncorrecta3']);
-          
-            $ficheroPreguntas->asXML('../xml/Questions.xml');
-            echo "Registro añadido en XML.<br>";
-           }else{
-                exit("No se ha podido guardar en XML, no se encuentra el fichero Questions.xml");
-           }
+              $ficheroPreguntas->asXML('../xml/Questions.xml');
+              echo "Registro añadido en XML.<br>";
+            }else{
+                  exit("No se ha podido guardar en XML, no se encuentra el fichero Questions.xml");
+            }
+          }
           ?>
       </div>
   </section>
-  <?php include '../html/Footer.html' ?>
+  <!-- <?php include '../html/Footer.html' ?> -->
 </body>
 </html>

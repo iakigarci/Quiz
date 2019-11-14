@@ -31,7 +31,7 @@
     </div>
     <div id="form" style="display: none">
 
-    <form name="fquestion" id="fquestion" method="post" enctype="multipart/form-data">
+    <form name="fquestion" id="fquestion" method="post" enctype="multipart/form-data" onreset="limpiarForm()">
             <p>Dirección de correo: </p>
             <input type="email" readonly size="60" id="dirCorreo" name="dirCorreo" value="<?php echo $_GET['email'];?>" required >
             <p>Introduce el enunciado de la pregunta: *</p>
@@ -55,14 +55,14 @@
             <div id="selector">
             <input type="file" id="file" accept="image/*" name="Imagen">
             </div>
-            <p> <input type="button" id="submit" value="Enviar" onclick="enviarForm()"> <input type="reset" value="Limpiar Formulario"></p>
+            <p> <input type="button" id="submit" value="Enviar" onclick="enviarForm()">
+            <input type="reset" id="reset" value="Limpiar Formulario" >
+            </p>
         </form>
     </div>
 
     <div id="tabla-preguntas">
     </div>
-
-      
   </section>
   <?php include '../html/Footer.html' ?>
 </body>
