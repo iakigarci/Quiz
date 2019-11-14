@@ -21,8 +21,8 @@ function  verNumeroPreguntas(){
             }
                 cont += 1;
         });
-        $('#contEmail').text(contEmail);
-        $('#contTotal').text(cont);
+            $('#contador-preguntas').empty();
+            $('#contador-preguntas').append("<a>"+contEmail+"</a> / <a>"+cont+"</a>");
     }
         
     });   
