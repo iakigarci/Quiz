@@ -2,6 +2,8 @@
 <html>
 <head>
     <?php include '../html/Head.html'?>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/CheckUserRollAjax.js"></script>
 </head>
 <body>
   <?php include '../php/Menus.php' ?>
@@ -17,6 +19,7 @@
             </select>
             <p>Introduce tu dirección de correo: *</p>
             <input type="email" size="60" id="dirCorreo" name="dirCorreo" required >
+             <div id="correo-div"></div>
             <p>Introduce tu nombre y apellido(s) *</p>
             <input type="text" size="60" id="nombreApellidos" name="nombreApellidos" required>
             <p>Contraseña: *</p>
