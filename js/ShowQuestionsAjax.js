@@ -1,14 +1,13 @@
-function visualizar() {
-    if (window.XMLHttpRequest) {
-        xmlhttp = new XMLHttpRequest();
-    } else {
-        xmlhttp = ActiveXObject("Microsoft.XMLHTTP");}
-    xmlhttp.open("GET","../php/ShowXmlQuestions.php",true);
-    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-            document.getElementById("showQuestions").innerHTML=xmlhttp.responseText;
+function verPreguntas(){
+    clean();
+    $.ajax({
+        url: '../php/ShowXmlQuestions.php',
+        beforeSend:function(){$('#content').html('<div><img src="../images/loading.gif"/></div>')},
+        success:function(datos){
+           $('#tabla-preguntas').append(datos);
+        },
+        error:function(){
+            $('#tabla-preguntas').fadeIn().html('<p class="error"><strong>El servidor parece que no responde</p>');
         }
-    }
-    xmlhttp.send();
-};
+    });
+}

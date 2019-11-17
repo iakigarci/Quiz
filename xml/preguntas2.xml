@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="ShowXmlQuestions.xsl"?>
 <assessmentItems>
 	<assessmentItem subject="Web" author="jvadillo001@ikasle.ehu.eus">
 		<itemBody>
@@ -32,4 +31,4 @@
 			<value> Ninguna es correcta </value>
 		</incorrectResponses>
 	</assessmentItem>
-</assessmentItems>
+<assessmentItem subject="" author=""><itemBody><p/></itemBody><correctResponse><value/></correctResponse><incorrectResponses><value/><value/><value/></incorrectResponses></assessmentItem></assessmentItems>

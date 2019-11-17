@@ -47,7 +47,7 @@
                     header("location:Layout.php?email=".$_REQUEST['dirCorreo']);*/
                     echo "<script>
                     alert('Inicio de sesion realizado correctamente. Pulsa aceptar para acceder a la pantalla principal.');
-                    window.location.href='LogIn.php?email=".$_REQUEST['dirCorreo']."';
+                    window.location.href='IncreaseGlobalCounter.php?email=".$_REQUEST['dirCorreo']."';
                     </script>";  
                 }else{
                     echo "Usuario o contraseña incorrectos, prueba de nuevo. <br>";

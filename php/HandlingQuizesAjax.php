@@ -4,26 +4,36 @@
   <?php include '../html/Head.html'?>
     <script src="../js/jquery-3.4.1.min.js"></script>
     <script src="../js/ShowImageInForm.js"></script>
-    <script src="../js/ValidateFieldsQuestion.js"></script>
     <script src="../js/ShowQuestionsAjax.js"></script>
+    <script src="../js/CleanPage.js"></script>
     <script src="../js/AddQuestionsAjax.js"></script>
     <script src="../js/CountQuestionsAjax.js"></script>
+    <script src="../js/CountUsersAjax.js"></script>
 </head>
 <body>
-  <?php include '../php/Menus.php'?>
+  <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
+      <div id="users" class="tabla">
+        <h3>Usuarios conectados</h3>
+        <h4><a id="usuariosTotales"><img src="../images/loading.gif" width="25" height="25"></a></h4>  
+      </div>
+      <div id="total-questions" class="tabla">
+          <h3>Tus Preguntas/Total Preguntas</h3>
+          <h4 id="contador-preguntas"><img id="gif-preguntas" src="../images/loading.gif" width="25" height="25"></h4>
+      </div>
+      
+    <div id="buttons">
+        <p>
+        <input type="button" id="insertq-button" value="Insertar Preguntas" onclick="verFormulario()">
+        <input type="button" id="showq-button" value="Ver Preguntas" onclick="verPreguntas()">
+        <input type="button" id="clean-button" value="Limpiar Pagina" onclick="clean()">
+        </p>   
+    </div>
+    <div id="form" style="display: none">
 
-  <div class="preguntasTotales" >
-    <p>Mis preguntas totales: <a id="misPreguntas">0</a> / <a id="todasPreguntas">0</a></p>
-  </div>
-  <div class="usuariosConectados">
-  </div>
-    <p>Número de usuarios logeados: <a id="usersLogin">0</a></p>
-  <div>
-
-    <form action="AddQuestionWithImage.php?email=<?php echo $_GET['email']; ?>" name="fquestion" id="fquestion" method="post" enctype="multipart/form-data">
+    <form name="fquestion" id="fquestion" method="post" enctype="multipart/form-data" onreset="limpiarForm()">
             <p>Dirección de correo: </p>
-            <input type="email" readonly size="60" id="dirCorreo" name="dirCorreo" value="<?php echo $_GET['email']; ?>" required >
+            <input type="email" readonly size="60" id="dirCorreo" name="dirCorreo" value="<?php echo $_GET['email'];?>" required >
             <p>Introduce el enunciado de la pregunta: *</p>
             <input type="text" size="60" id="nombrePregunta" name="nombrePregunta" required>
             <p>Respuesta correcta: *</p>
@@ -45,24 +55,15 @@
             <div id="selector">
             <input type="file" id="file" accept="image/*" name="Imagen">
             </div>
+            <p> <input type="button" id="submit" value="Enviar" onclick="enviarForm()">
+            <input type="reset" id="reset" value="Limpiar Formulario" >
+            </p>
         </form>
-        <div>
-            <input type="button" id="verPreguntas" value="Ver preguntas" onClick="visualizar()">
-            <input type="button" id="insertarPregunta" value="Insertar pregunta" >
-            <input type="reset" id="resetForm" value="Resetear" onClick="resetForm()">
-        </div>
     </div>
-    <div id="showQuestions">
-    </div>
-    <div id="insertQuestions"></div>
-  </section>
-  <?php include '../html/Footer.html'?>
-  <script>
-  function resetForm(){
-      $("#showQuestions").empty();
-      $("#insertQuestions").empty();
-  }
 
-  </script>
+    <div id="tabla-preguntas">
+    </div>
+  </section>
+  <?php include '../html/Footer.html' ?>
 </body>
 </html>

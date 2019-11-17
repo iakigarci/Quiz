@@ -1,13 +1,13 @@
-function verImagen(input){
-    if(input.files && input.files[0]){
+function verImagen(input) {
+    if (input.files && input.files[0]) {
         var reader = new FileReader()
         var verImagen = document.createElement("img");
-        verImagen.id="verImagen";
-        verImagen.width="100";
+        verImagen.id = "verImagen";
+        verImagen.width = "100";
         document.fquestion.appendChild(verImagen);
-        
-        reader.onload = function (e){
-            $('#verImagen').attr('src',e.target.result);
+
+        reader.onload = function (e) {
+            $('#verImagen').attr('src', e.target.result);
 
         }
 
@@ -16,8 +16,8 @@ function verImagen(input){
 }
 
 
-$('document').ready(function(){
-    $('#file').change(function(){
+$('document').ready(function () {
+    $('#file').change(function () {
         verImagen(this);
     })
 })
