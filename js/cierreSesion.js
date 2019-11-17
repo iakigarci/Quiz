@@ -3,4 +3,5 @@ function cierreSesion(){
     $('#register').show();
     $('#login').show();
     $('#logout').hide();
+    $('#id-question').hide();
 }
