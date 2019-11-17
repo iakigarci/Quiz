@@ -2,6 +2,7 @@
 <html>
 <head>
     <?php include '../html/Head.html'?>
+    
 </head>
 <body>
   <?php include '../php/Menus.php' ?>
@@ -17,6 +18,9 @@
             </select>
             <p>Introduce tu dirección de correo: *</p>
             <input type="email" size="60" id="dirCorreo" name="dirCorreo" required >
+            <div id="campoVIP">
+                <p id="mensajeVIP"></p>
+            </div>
             <p>Introduce tu nombre y apellido(s) *</p>
             <input type="text" size="60" id="nombreApellidos" name="nombreApellidos" required>
             <p>Contraseña: *</p>
@@ -108,6 +112,7 @@
       
       </div>
   </section>
+  <script src="../js/VerifyVIP.js"></script>
   <?php include '../html/Footer.html' ?>
 </body>
 </html>
