@@ -50,11 +50,9 @@ $(document).ready(function(){
         async: false,
         cache: false,
         success: function(data){
-            console.log(data);
-            $("#weather-info").html("<table border = \1\" style=\"margin-right:auto; margin-left:auto\"><tr><th>Estado del cielo: </th><td>"+data.list[0].weather[0].main+"</td></tr><tr><th>Descripcion: </th><td>"+data.list[0].weather[0].description+"</td></tr><tr><th>Temperatura: </th><td>"+data.list[0].main.temp+"</td></tr></table>");
+            $("#weather-info").html("<table border = \1\" style=\"margin-right:auto; margin-left:auto\"><tr><th>Estado del cielo: </th><td>"+data.list[0].weather[0].main+"</td></tr><tr><th>Descripcion: </th><td>"+data.list[0].weather[0].description+"</td></tr><tr><th>Temperatura: </th><td>"+data.list[0].main.temp+"ºC</td></tr></table>");
             
         }
     });
-    console.log("abeja");
     initialize();
 });

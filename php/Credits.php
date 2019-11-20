@@ -24,7 +24,7 @@
         <br>
         <img src="../images/avatarIaki.png.jpg" width="125" height="125">
         <p>Estudiante de Ingeniería Informática en la especialización <br> de Ingeniería del Software.</p>
-
+        <hr>
     </div>
       <h2>Tu ubicación, sientete vigilado:</h2>
       <a href="http://www.geoplugin.com/geolocation/" target="_new">IP Geolocation</a> by <a href="http://www.geoplugin.com/" target="_new">geoPlugin</a>
