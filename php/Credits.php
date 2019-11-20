@@ -2,6 +2,10 @@
 <html>
 <head>
   <?php include '../html/Head.html'?>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script src="../js/LocateUser.js"></script>
+    
 </head>
 <body>
   <?php include '../php/Menus.php' ?>
@@ -22,6 +26,11 @@
         <p>Estudiante de Ingeniería Informática en la especialización <br> de Ingeniería del Software.</p>
 
     </div>
+      <h2>Tu ubicación, sientete vigilado:</h2>
+      <a href="http://www.geoplugin.com/geolocation/" target="_new">IP Geolocation</a> by <a href="http://www.geoplugin.com/" target="_new">geoPlugin</a>
+    <div id="map_canvas" style="width:50%; height:100%; margin-right:auto; margin-left:auto"></div>
+      <div id="location-info"></div>
+      <div id="weather-info"></div>
   </section>
   <?php include '../html/Footer.html' ?>
 </body>
