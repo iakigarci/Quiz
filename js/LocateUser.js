@@ -36,7 +36,6 @@ $(document).ready(function(){
         async: false,
         cache: false,
         success: function(data){
-            console.log(data);
             lat = data.geoplugin_latitude;
             lng = data.geoplugin_longitude;
             $("#location-info").html("<table border = \1\" style=\"margin-right:auto; margin-left:auto\"><tr><th>Ciudad: </th><td>"+data.geoplugin_city+"</td></tr><tr><th>Region: </th><td>"+data.geoplugin_regionName+"</td></tr><tr><th>Pais: </th><td>"+data.geoplugin_countryName+"</td></tr></table>");
@@ -46,16 +45,16 @@ $(document).ready(function(){
     
      $.ajax({
         type: 'GET',
-        url: '../php/ClientLocationWeather.php?lat='+lat+'&lon='+lng',
+        url: '../php/ClientLocationWeather.php?lat='+lat+'&lon='+lng,
         dataType:'json',
         async: false,
         cache: false,
         success: function(data){
             console.log(data);
-            $("#weather-info").html("<table border = \1\" style=\"margin-right:auto; margin-left:auto\"><tr><th>Estado del cielo: </th><td>"+data.weather.main+"</td></tr><tr><th>Descripcion: </th><td>"+data.weather.description+"</td></tr><tr><th>Temperatura: </th><td>"+data.main.temp-273+"</td></tr></table>");
+            $("#weather-info").html("<table border = \1\" style=\"margin-right:auto; margin-left:auto\"><tr><th>Estado del cielo: </th><td>"+data.list[0].weather[0].main+"</td></tr><tr><th>Descripcion: </th><td>"+data.list[0].weather[0].description+"</td></tr><tr><th>Temperatura: </th><td>"+data.list[0].main.temp+"</td></tr></table>");
             
         }
     });
-    
+    console.log("abeja");
     initialize();
 });
