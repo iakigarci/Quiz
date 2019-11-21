@@ -2,6 +2,8 @@
 <html>
 <head>
     <?php include '../html/Head.html'?>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/CheckUserRollAjax.js"></script>
 </head>
 <body>
   <?php include '../php/Menus.php' ?>
@@ -17,17 +19,19 @@
             </select>
             <p>Introduce tu dirección de correo: *</p>
             <input type="email" size="60" id="dirCorreo" name="dirCorreo" required >
+             <div id="correo-div"></div>
             <p>Introduce tu nombre y apellido(s) *</p>
             <input type="text" size="60" id="nombreApellidos" name="nombreApellidos" required>
             <p>Contraseña: *</p>
             <input type="password" size="60" id="pass" name="pass" required>
+             <div id="pass-div"></div>
             <p>Repite la contraseña: *</p>
             <input type="password" size="60" id="passR" name="passR" required>
             <div id="selector">
             <p>Selecciona una foto de perfil: (Opcional) </p>
             <input type="file" id="file" accept="image/*" name="Imagen">
             </div>
-            <p> <input type="submit" id="submit" value="Enviar"> <input type="reset" value="Limpiar"></p>
+            <p> <input type="submit" id="submit" value="Enviar" disabled="true"> <input type="reset" value="Limpiar"></p>
         </form>
       </div>
       
