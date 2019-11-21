@@ -2,7 +2,7 @@
     require_once('../lib/nusoap.php');
     require_once('../lib/class.wsdlcache.php');
     
-    $ns = "http://localhost/ProyectoWS19G18/lib";
+    $ns = "http://".$_SERVER['HTTP_HOST']."/ProyectoWS19G18/lib";
     $server = new soap_server;
     $server->configureWSDL('verificar',$ns);
     $server->wsdl->schemaTargetNamespace = $ns;
