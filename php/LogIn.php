@@ -42,11 +42,20 @@
                 }
                 $row = mysqli_fetch_array($resultado);
                 if($row['email']==$email){
-                   /* sleep(3);
-                    header("location:Layout.php?email=".$_REQUEST['dirCorreo']);*/
+                    session_start();
+                    
+                    $_SESSION['identificado']="SI";
+                    $_SESSION['email'] = $row['email'];
+                    
+                    if($row['email'] == "admin@ehu.es"){
+                        $_SESSION['tipo'] = "admin";
+                    }else{
+                        $_SESSION['tipo'] = user;
+                    }
+                    
                     echo "<script>
                     alert('Inicio de sesion realizado correctamente. Pulsa aceptar para acceder a la pantalla principal.');
-                    window.location.href='IncreaseGlobalCounter.php?email=".$_REQUEST['dirCorreo']."';
+                    window.location.href='IncreaseGlobalCounter.php';
                     </script>";  
                 }else{
                     echo "Usuario o contraseña incorrectos, prueba de nuevo. <br>";
