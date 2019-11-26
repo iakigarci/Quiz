@@ -34,14 +34,14 @@
                 $email = $_REQUEST['dirCorreo'];
                 $pass = $_REQUEST['pass'];
                 
-                $sql = "SELECT * FROM usuarios WHERE email=\"".$email."\" and pass=\"".$pass."\";";
+                $sql = "SELECT * FROM usuarios WHERE email='$email';";
                 
                 $resultado = mysqli_query($mysqli,$sql,MYSQLI_USE_RESULT);
                 if(!$resultado){
                     die("Error: ".mysqli_error($mysqli));
                 }
                 $row = mysqli_fetch_array($resultado);
-                if($row['email']==$email){
+                if(($row['email']==$email)and(hash_equals($row['pass'],crypt($pass,$row['pass'])))){
                     session_start();
                     
                     $_SESSION['identificado']="SI";
