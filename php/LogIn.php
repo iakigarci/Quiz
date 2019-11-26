@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,16 +46,22 @@
                 }
                 $row = mysqli_fetch_array($resultado); 
                 if($row['email']==$email){
-                  include '../php/IncreaseGlobalCounter.php';
-                   /* sleep(3);
-                    header("location:Layout.php?email=".$_REQUEST['dirCorreo']);*/
+                    $_SESSION['email']=$email;
+                    $_SESSION['pass']=$pass;
+                    $_SESSION['autenticado']="SI";
+
+                    if ($email=="admin@ehu.es" && $pass="admin000") {
+                      $_SESSION['admin']="SI";
+                    }
+
                     echo "<script>
                     alert('Inicio de sesion realizado correctamente. Pulsa aceptar para acceder a la pantalla principal.');
-                    window.location.href='IncreaseGlobalCounter.php?email=".$_REQUEST['dirCorreo']."';
+                    window.location.href='IncreaseGlobalCounter.php';
                     </script>";  
                 }else{
                     echo "Usuario o contraseña incorrectos, prueba de nuevo. <br>";
                     echo "<a href=\"javascript:history.back()\">Volver a atras</a>";
+                    session_destroy();
                 }
             }
         ?>

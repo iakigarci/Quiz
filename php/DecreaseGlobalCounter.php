@@ -1,9 +1,11 @@
 <?php
-    $users = simplexml_load_file('../xml/Counter.xml');
-    $cont = $users->user;
-    $users->user[0] = $cont-1;
+    if ($_SESSION['autenticado']="SI") {
+        $users = simplexml_load_file('../xml/Counter.xml');
+        $cont = $users->user;
+        $users->user[0] = $cont-1;
 
-    $users->asXML('../xml/Counter.xml');
-    
-    header('location:LogOut.php');
+        $users->asXML('../xml/Counter.xml');
+        
+        header('location:LogOut.php');
+    }
 ?>
