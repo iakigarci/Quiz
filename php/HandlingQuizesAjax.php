@@ -39,7 +39,7 @@
 
     <form name="fquestion" id="fquestion" method="post" enctype="multipart/form-data" onreset="limpiarForm()">
             <p>Dirección de correo: </p>
-            <input type="email" readonly size="60" id="dirCorreo" name="dirCorreo" value="<?php echo $_GET['email'];?>" required >
+            <input type="email" readonly size="60" id="dirCorreo" name="dirCorreo" value="<?php echo $_SESSION['email'];?>" required >
             <p>Introduce el enunciado de la pregunta: *</p>
             <input type="text" size="60" id="nombrePregunta" name="nombrePregunta" required>
             <p>Respuesta correcta: *</p>

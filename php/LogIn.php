@@ -52,7 +52,7 @@
                         if($row['email'] == "admin@ehu.es"){
                             $_SESSION['tipo'] = "admin";
                         }else{
-                            $_SESSION['tipo'] = user;
+                            $_SESSION['tipo'] = "user";
                         }
 
                         echo "<script>
