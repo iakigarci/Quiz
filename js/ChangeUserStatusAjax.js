@@ -8,8 +8,7 @@ function changeStatus(button){
             async: false,
             cache:false,
             success: function(data){
-                var row = document.getElementById(str[2]);
-                row.replaceWith(data);
+                document.getElementById(str[2]).innerHTML = data;
             }
             
         });
