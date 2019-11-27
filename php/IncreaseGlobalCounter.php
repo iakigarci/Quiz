@@ -5,5 +5,5 @@
 
     $users->asXML('../xml/Counter.xml');
     
-    header('location:Layout.php?email='.$_GET['email']);
+    header('location:Layout.php');
 ?>

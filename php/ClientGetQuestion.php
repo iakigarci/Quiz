@@ -1,3 +1,9 @@
+<?php include'../php/Seguridad.php'?>
+<?php
+    if($_SESSION['tipo']=="admin"){
+        header('location:Layout.php');
+    }
+?>
 <html>
     <head>
         <?php include'../html/Head.html';?>

@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,21 +35,36 @@
                 $email = $_REQUEST['dirCorreo'];
                 $pass = $_REQUEST['pass'];
                 
-                $sql = "SELECT * FROM usuarios WHERE email=\"".$email."\" and pass=\"".$pass."\";";
+                $sql = "SELECT * FROM usuarios WHERE email='$email';";
                 
                 $resultado = mysqli_query($mysqli,$sql,MYSQLI_USE_RESULT);
                 if(!$resultado){
                     die("Error: ".mysqli_error($mysqli));
                 }
                 $row = mysqli_fetch_array($resultado);
-                if($row['email']==$email){
-                   /* sleep(3);
-                    header("location:Layout.php?email=".$_REQUEST['dirCorreo']);*/
-                    echo "<script>
-                    alert('Inicio de sesion realizado correctamente. Pulsa aceptar para acceder a la pantalla principal.');
-                    window.location.href='IncreaseGlobalCounter.php?email=".$_REQUEST['dirCorreo']."';
-                    </script>";  
+                if(($row['email']==$email)and(hash_equals($row['pass'],crypt($pass,$row['pass'])))){
+                    if($row['activo']){
+                        session_start();
+
+                        $_SESSION['identificado']="SI";
+                        $_SESSION['email'] = $row['email'];
+
+                        if($row['email'] == "admin@ehu.es"){
+                            $_SESSION['tipo'] = "admin";
+                        }else{
+                            $_SESSION['tipo'] = "user";
+                        }
+
+                        echo "<script>
+                        alert('Inicio de sesion realizado correctamente. Pulsa aceptar para acceder a la pantalla principal.');
+                        window.location.href='IncreaseGlobalCounter.php';
+                        </script>"; 
+                    }else{
+                        echo "Este usuario no tiene permitido acceder. <br>";
+                        echo "<a href=\"javascript:history.back()\">Volver a atras</a>";
+                    }
                 }else{
+                    $_SESSION['identificado'] = "NO";
                     echo "Usuario o contraseña incorrectos, prueba de nuevo. <br>";
                     echo "<a href=\"javascript:history.back()\">Volver a atras</a>";
                 }
