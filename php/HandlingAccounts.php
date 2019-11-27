@@ -10,6 +10,7 @@
 <head>
   <?php include '../html/Head.html'?>
     <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/ChangeUserStatusAjax.js"></script>
 </head>
 <body>
   <?php include '../php/Menus.php' ?>
@@ -35,7 +36,7 @@
                 if($row['activo']==0){
                     $activo = "Bloqueado";
                 }
-                echo "<tr><td>".$row['email']."</td><td>".$row['pass']."</td><td><img width=\"50\" height=\"50\" src=\"data:image/*;base64, ".$row['foto']."\" alt=\"Imagen\"/></td><td>".$activo."</td><td><input type=\"button\" id=\"estado-usu\" value=\"Cambiar Estado\"/></td><td><input type=\"button\" id=\"borrar-usu\" value=\"Eliminar Usuario\"/></td></tr>";
+                echo "<tr id=".$row['email']."><td>".$row['email']."</td><td>".$row['pass']."</td><td><img width=\"50\" height=\"50\" src=\"data:image/*;base64, ".$row['foto']."\" alt=\"Imagen\"/></td><td>".$activo."</td><td><input type=\"button\" onclick=\"changeStatus(this)\" id=\"estado-button-{$row['email']}\" value=\"Cambiar Estado\"/></td><td><input type=\"button\" id=\"borrar-button-{$row['email']}\" value=\"Eliminar Usuario\"/></td></tr>";
             }
             echo "</table>";
             mysqli_close($link);

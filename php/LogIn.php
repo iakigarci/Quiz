@@ -42,21 +42,26 @@
                 }
                 $row = mysqli_fetch_array($resultado);
                 if(($row['email']==$email)and(hash_equals($row['pass'],crypt($pass,$row['pass'])))){
-                    session_start();
-                    
-                    $_SESSION['identificado']="SI";
-                    $_SESSION['email'] = $row['email'];
-                    
-                    if($row['email'] == "admin@ehu.es"){
-                        $_SESSION['tipo'] = "admin";
+                    if($row['activo']){
+                        session_start();
+
+                        $_SESSION['identificado']="SI";
+                        $_SESSION['email'] = $row['email'];
+
+                        if($row['email'] == "admin@ehu.es"){
+                            $_SESSION['tipo'] = "admin";
+                        }else{
+                            $_SESSION['tipo'] = user;
+                        }
+
+                        echo "<script>
+                        alert('Inicio de sesion realizado correctamente. Pulsa aceptar para acceder a la pantalla principal.');
+                        window.location.href='IncreaseGlobalCounter.php';
+                        </script>"; 
                     }else{
-                        $_SESSION['tipo'] = user;
+                        echo "Este usuario no tiene permitido acceder. <br>";
+                        echo "<a href=\"javascript:history.back()\">Volver a atras</a>";
                     }
-                    
-                    echo "<script>
-                    alert('Inicio de sesion realizado correctamente. Pulsa aceptar para acceder a la pantalla principal.');
-                    window.location.href='IncreaseGlobalCounter.php';
-                    </script>";  
                 }else{
                     echo "Usuario o contraseña incorrectos, prueba de nuevo. <br>";
                     echo "<a href=\"javascript:history.back()\">Volver a atras</a>";
