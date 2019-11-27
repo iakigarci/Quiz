@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,6 +64,7 @@
                         echo "<a href=\"javascript:history.back()\">Volver a atras</a>";
                     }
                 }else{
+                    $_SESSION['identificado'] = "NO";
                     echo "Usuario o contraseña incorrectos, prueba de nuevo. <br>";
                     echo "<a href=\"javascript:history.back()\">Volver a atras</a>";
                 }
